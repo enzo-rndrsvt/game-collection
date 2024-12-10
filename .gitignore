@@ -1,0 +1,6 @@
+# On ignore les fichiers de configuration composer
+composer.json
+composer.lock
+/vendor/
+
+.env
