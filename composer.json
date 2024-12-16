@@ -1,0 +1,17 @@
+{
+    "name": "utilisateur/game-collection",
+    "autoload": {
+        "psr-4": {
+            "Utilisateur\\GameCollection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Enzo Rynders-Vitu",
+            "email": "enzo.ryndersvitu@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
