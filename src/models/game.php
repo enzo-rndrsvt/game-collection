@@ -9,7 +9,7 @@ function create_game(
     bool $xbox,
     bool $switch,
     string $image
-) : int {
+): int {
 
     $db = create_bdd();
 
@@ -30,7 +30,8 @@ function create_game(
     return $db->lastInsertId();
 }
 
-function get_game(int $id) : array {
+function get_game(int $id): array
+{
     $db = create_bdd();
 
     $query = $db->prepare('SELECT * FROM games WHERE id = :id');
@@ -41,7 +42,8 @@ function get_game(int $id) : array {
     return $query->fetch();
 }
 
-function get_games() : array {
+function get_games(): array
+{
     $db = create_bdd();
 
     $query = $db->query('SELECT * FROM games');
@@ -58,7 +60,7 @@ function update_game(
     bool $xbox,
     bool $switch,
     string $image
-) : void {
+): void {
     $db = create_bdd();
 
     $query = $db->prepare('UPDATE games SET name = :name, description = :description, release_date = :release_date, pc = :pc, ps = :ps, xbox = :xbox, switch = :switch, image = :image WHERE id = :id');
@@ -76,7 +78,7 @@ function update_game(
     ]);
 }
 
-function delete_game(int $id) : void
+function delete_game(int $id): void
 {
     $db = create_bdd();
 
