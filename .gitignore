@@ -6,3 +6,6 @@ composer.lock
 .env
 
 .DS_Store
+
+game_collection_rsa
+game_collection_rsa.pub
