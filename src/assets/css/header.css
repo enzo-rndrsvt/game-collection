@@ -29,10 +29,11 @@ header li {
 
 
 header a:not(#accueil){
-    font-family: 'Inter', serif;
+    text-decoration: none;
+    font-family: 'Barlow', 'Inter', serif;
     font-weight: bold;
-    font-size: 1.5em;
-
+    font-size: 24px;
+    color: #FFFF; 
     border-radius: 15px;
     margin-right: 20px;
     transition-duration: 0.2s;
@@ -40,19 +41,16 @@ header a:not(#accueil){
     text-align: center;
 }
 
-header a:hover:not(#accueil){
-    color: rgb(23, 23, 23);    
-    background-color: rgb(119, 241, 190);
-
+header nav a:hover{
+    background-color: rgb(100,88,207); 
 }
 
 #accueil {
     display: flex;
     align-items: center;
-    padding-left: 1vw;
+    padding: 25px;
 }
 
 #accueil img {
     margin: 0px;
-    width: 160px;
 }
