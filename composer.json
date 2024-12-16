@@ -1,5 +1,7 @@
 {
     "name": "utilisateur/game-collection",
+    "description": "Game Collection Groupe 5",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Utilisateur\\GameCollection\\": "src/"
