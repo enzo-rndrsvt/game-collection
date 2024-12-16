@@ -1,11 +1,10 @@
 <?php
-
 function create_user(
     string $fname,
     string $lname,
     string $email,
     string $password # Must be hashed
-) : int {
+): int {
 
     $db = create_bdd();
 
@@ -23,12 +22,25 @@ function create_user(
 }
 
 
-function get_user(int $id) : array {
+function get_user(int $id): array
+{
     $db = create_bdd();
 
     $query = $db->prepare('SELECT * FROM users WHERE id = :id');
     $query->execute([
         'id' => $id
+    ]);
+
+    return $query->fetch();
+}
+
+function get_email(string $email): int
+{
+    $db = create_bdd();
+
+    $query = $db->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+    $query->execute([
+        'email' => $email
     ]);
 
     return $query->fetch();
@@ -40,7 +52,7 @@ function update_user(
     string $lname,
     string $email,
     string $password # Must be hashed
-) : void {
+): void {
     $db = create_bdd();
 
     $query = $db->prepare('UPDATE users SET email = :email, password = :password, first_name = :fname, last_name = :lname WHERE id = :id');
@@ -53,7 +65,8 @@ function update_user(
     ]);
 }
 
-function delete_user(int $id) : void {
+function delete_user(int $id): void
+{
     $db = create_bdd();
 
     $query = $db->prepare('DELETE FROM users WHERE id = :id');

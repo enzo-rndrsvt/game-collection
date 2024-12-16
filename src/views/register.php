@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <div class="connexion">
+    <div class="register">
         <h1>Inscription</h1>
-        <form method="post">
+        <form method="post" action="controllers/register.php">
             <div class="form">
                 <div>
                     <p>Nom :</p>
@@ -33,7 +33,7 @@
                 </div>
                 <div>
                     <p>Confirmation du mot de passe :</p>
-                    <input type="password" name="password" />
+                    <input type="password" name="verif_password" />
                 </div>
                 <div>
                     <button type="submit">S'INSCRIRE</button>
