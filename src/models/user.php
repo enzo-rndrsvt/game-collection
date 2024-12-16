@@ -1,4 +1,7 @@
 <?php
+
+require "sql.php";
+
 function create_user(
     string $fname,
     string $lname,

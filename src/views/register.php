@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="assets/css/general.css">
-    <link rel="stylesheet" href="assets/css/inscription.css">
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/inscription.css">
 
 </head>
 
 <body>
     <div class="register">
         <h1>Inscription</h1>
-        <form method="post" action="controllers/register.php">
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
+            unset($_SESSION['error']);
+        }
+        ?>
+        <form method="post" action="../controllers/register.php">
             <div class="form">
                 <div>
                     <p>Nom :</p>
