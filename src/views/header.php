@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <header>
-    <a id="accueil" href="./home.php">
-        <img src="assets/images/logo.png" alt="Logo de de game collection">
+    <a id="accueil" href="/">
+        <img src="/src/assets/images/logo.png" alt="Logo de de game collection">
     </a>
     <nav>
         <ul>
@@ -22,11 +22,11 @@
 
             <?php else: ?>
                 <li>
-                    <a href="/src/controllers/login.php">CONNEXION</a>
+                    <a href="/src/views/register.php">CONNEXION</a>
                 </li>
             <?php endif; ?>
 
-      
+
         </ul>
     </nav>
 </header>

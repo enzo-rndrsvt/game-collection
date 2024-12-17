@@ -1,6 +1,6 @@
 <?php
 
-require('../models/user.php');
+require('/src/models/user.php');
 
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verif_password'])) {
     $nom = htmlspecialchars($_POST['nom']);
@@ -10,7 +10,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
 
     if (get_email($email) > 0) {
         $_SESSION['error'] = "L'adresse mail est déjà utilisée.";
-        header('Location: ../views/register.php');
+        header('Location: /src/views/register.php');
         exit();
     }
 
@@ -19,10 +19,10 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
         create_user($nom, $prenom, $email, $password);
     } else {
         $_SESSION['error'] = "Les mots de passe ne correspondent pas.";
-        header('Location: ../views/register.php');
+        header('Location: /src/views/register.php');
         exit();
     }
 
-    require './views/connexion.php';
+    require '/src/views/connexion.php';
 }
 ?>

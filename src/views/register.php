@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/inscription.css">
+    <link rel="stylesheet" href="/src/assets/css/general.css">
+    <link rel="stylesheet" href="/src/assets/css/inscription.css">
 
 </head>
 
@@ -20,7 +20,7 @@
             unset($_SESSION['error']);
         }
         ?>
-        <form method="post" action="../controllers/register.php">
+        <form method="post" action="/src/controllers/register.php">
             <div class="form">
                 <div>
                     <p>Nom :</p>
