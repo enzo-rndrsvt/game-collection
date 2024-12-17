@@ -3,11 +3,11 @@
         'name' => 'utilisateur/htdocs',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4c19ed803f13f7c88775fc9229d3490dfeb1daff',
+        'reference' => 'ab1a3ac847c558e54773c2306c32fdf735541b89',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'dev' => true,
+        'dev' => false,
     ),
     'versions' => array(
         'graham-campbell/result-type' => array(
@@ -58,7 +58,7 @@
         'utilisateur/htdocs' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4c19ed803f13f7c88775fc9229d3490dfeb1daff',
+            'reference' => 'ab1a3ac847c558e54773c2306c32fdf735541b89',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
