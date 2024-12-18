@@ -22,7 +22,7 @@
 
             <?php else: ?>
                 <li>
-                    <a href="/src/views/register.php">CONNEXION</a>
+                    <a href="/register">CONNEXION</a>
                 </li>
             <?php endif; ?>
 
