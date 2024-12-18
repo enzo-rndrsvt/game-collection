@@ -17,6 +17,7 @@ $route = trim($route, '/');
 $routes = [
     'register' => 'src/views/register.php',
     'login' => 'src/views/login.php',
+    'logout' => 'src/controllers/logout.php',
     '' => 'src/views/home.php',
 ];
 

@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+
+
 require '../models/user.php';
 
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verif_password'])) {
@@ -23,6 +26,8 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
         exit();
     }
 
-    require '/register';
+    $_SESSION['validation'] = "Veuillez maintenant vous connecter.";
+    header('Location: /login');
+    exit();
 }
 ?>

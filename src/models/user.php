@@ -25,16 +25,16 @@ function create_user(
 }
 
 
-function get_user(int $id): array
+function get_user(string $email): array
 {
     $db = create_bdd();
 
-    $query = $db->prepare('SELECT * FROM users WHERE id = :id');
+    $query = $db->prepare('SELECT * FROM users WHERE email = :email');
     $query->execute([
-        'id' => $id
+        'email' => $email
     ]);
-
-    return $query->fetch();
+    $var = $query->fetch(PDO::FETCH_ASSOC);
+    return $var;
 }
 
 function get_email(string $email): int
@@ -46,7 +46,7 @@ function get_email(string $email): int
         'email' => $email
     ]);
 
-    return $query->fetch();
+    return $query->fetchColumn();
 }
 
 function update_user(

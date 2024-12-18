@@ -19,6 +19,10 @@
             echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
             unset($_SESSION['error']);
         }
+        if (isset($_SESSION['validation'])) {
+            echo '<p style="color:green;">' . $_SESSION['validation'] . '</p>';
+            unset($_SESSION['validation']);
+        }
         ?>
         <form method="post" action="/src/controllers/register.php">
             <div class="form">
@@ -46,7 +50,7 @@
                     <button type="submit">S'INSCRIRE</button>
                 </div>
             </div>
-            <a href="">Se connecter</a>
+            <a href="/login">Se connecter</a>
         </form>
     </div>
 </body>

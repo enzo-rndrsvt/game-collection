@@ -13,7 +13,18 @@
 <body>
     <div class="connexion">
         <h1>Se connecter à Game Collection</h1>
-        <form method="post">
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])) {
+            echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
+            unset($_SESSION['error']);
+        }
+        if (isset($_SESSION['validation'])) {
+            echo '<p style="color:green;">' . $_SESSION['validation'] . '</p>';
+            unset($_SESSION['validation']);
+        }
+        ?>
+        <form method="post" action="/src/controllers/login.php">
             <div class="form">
                 <div>
                     <p>Email :</p>
@@ -27,7 +38,7 @@
                     <button type="submit">SE CONNECTER</button>
                 </div>
             </div>
-            <a href="">S'inscrire</a>
+            <a href="/register">S'inscrire</a>
         </form>
     </div>
 </body>
