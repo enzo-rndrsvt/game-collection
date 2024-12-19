@@ -28,11 +28,11 @@
             <div class="form">
                 <div>
                     <p>Email :</p>
-                    <input type="email" name="email" />
+                    <input type="email" name="email" required />
                 </div>
                 <div>
                     <p>Mot de passe :</p>
-                    <input type="password" name="password" />
+                    <input type="password" name="password" required />
                 </div>
                 <div>
                     <button type="submit">SE CONNECTER</button>

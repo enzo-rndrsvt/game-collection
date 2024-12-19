@@ -28,23 +28,23 @@
             <div class="form">
                 <div>
                     <p>Nom :</p>
-                    <input type="text" name="nom" />
+                    <input type="text" name="nom" required />
                 </div>
                 <div>
                     <p>Prénom :</p>
-                    <input type="text" name="prenom" />
+                    <input type="text" name="prenom" required />
                 </div>
                 <div>
                     <p>Email :</p>
-                    <input type="email" name="email" />
+                    <input type="email" name="email" required />
                 </div>
                 <div>
                     <p>Mot de passe :</p>
-                    <input type="password" name="password" />
+                    <input type="password" name="password" required />
                 </div>
                 <div>
                     <p>Confirmation du mot de passe :</p>
-                    <input type="password" name="verif_password" />
+                    <input type="password" name="verif_password" required />
                 </div>
                 <div>
                     <button type="submit">S'INSCRIRE</button>

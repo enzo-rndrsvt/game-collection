@@ -13,16 +13,12 @@
     <link rel="stylesheet" href="/src/assets/css/home.css">
 
 </head>
+<header>
+    <?php require_once "header.php" ?>
+</header>
 
 <body>
-
-    <!-- Importer les fichiers -->
-    <?php
-    require_once "header.php"
-        ?>
-
     <h1>Ceci est l'accueil de game collection</h1>
-
 </body>
 
 </html>

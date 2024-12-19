@@ -5,7 +5,7 @@ function create_library(
     int $userid,
     int $gameid,
     string $timeplayed // Au format 'YYYY-MM-DD HH:MM:SS'
-) : int {
+): int {
 
     $db = create_bdd();
 
@@ -21,7 +21,8 @@ function create_library(
     return $db->lastInsertId();
 }
 
-function get_library(int $id) : array {
+function get_library(int $id): array
+{
     $db = create_bdd();
 
     $query = $db->prepare('SELECT * FROM library WHERE id = :id');
@@ -32,7 +33,8 @@ function get_library(int $id) : array {
     return $query->fetch();
 }
 
-function get_user_library(int $userid) : array {
+function get_user_library(int $userid): array
+{
     $db = create_bdd();
 
     $query = $db->prepare('SELECT * FROM library WHERE user_id = :userid');
@@ -48,7 +50,7 @@ function update_library(
     int $userid,
     int $gameid,
     string $timeplayed // Au format 'YYYY-MM-DD HH:MM:SS'
-) : void {
+): void {
     $db = create_bdd();
 
     $query = $db->prepare('UPDATE library SET user_id = :userid, game_id = :gameid, time_played = :timeplayed WHERE id = :id');
@@ -61,7 +63,8 @@ function update_library(
 }
 
 
-function delete_library(int $id) : void {
+function delete_library(int $id): void
+{
     $db = create_bdd();
 
     $query = $db->prepare('DELETE FROM library WHERE id = :id');

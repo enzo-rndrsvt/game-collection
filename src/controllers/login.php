@@ -19,8 +19,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         header('Location: /login');
         exit();
     }
-
-
 }
 
 ?>

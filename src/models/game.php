@@ -1,5 +1,7 @@
 <?php
 
+require "sql.php";
+
 function create_game(
     string $name,
     string $description,
@@ -8,13 +10,14 @@ function create_game(
     bool $ps,
     bool $xbox,
     bool $switch,
-    string $image
+    string $image,
+    string $site
 ): int {
 
     $db = create_bdd();
 
-    $query = $db->prepare('INSERT INTO games (name, description, release_date, pc, ps, xbox, switch, image)
-                                  VALUES (:name, :description, :release_date, :pc, :ps, :xbox, :switch, :image)');
+    $query = $db->prepare('INSERT INTO games (name, description, release_date, pc, ps, xbox, switch, image, site)
+                                  VALUES (:name, :description, :release_date, :pc, :ps, :xbox, :switch, :image, :site)');
 
     $query->execute([
         'name' => $name,
@@ -24,7 +27,8 @@ function create_game(
         'ps' => $ps,
         'xbox' => $xbox,
         'switch' => $switch,
-        'image' => $image
+        'image' => $image,
+        'site' => $site
     ]);
 
     return $db->lastInsertId();
@@ -59,11 +63,12 @@ function update_game(
     bool $ps,
     bool $xbox,
     bool $switch,
-    string $image
+    string $image,
+    string $site
 ): void {
     $db = create_bdd();
 
-    $query = $db->prepare('UPDATE games SET name = :name, description = :description, release_date = :release_date, pc = :pc, ps = :ps, xbox = :xbox, switch = :switch, image = :image WHERE id = :id');
+    $query = $db->prepare('UPDATE games SET name = :name, description = :description, release_date = :release_date, pc = :pc, ps = :ps, xbox = :xbox, switch = :switch, image = :image, site = :site WHERE id = :id');
 
     $query->execute([
         'id' => $id,
@@ -74,7 +79,8 @@ function update_game(
         'ps' => $ps,
         'xbox' => $xbox,
         'switch' => $switch,
-        'image' => $image
+        'image' => $image,
+        'site' => $site
     ]);
 }
 
