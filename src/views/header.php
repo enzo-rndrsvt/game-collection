@@ -24,7 +24,7 @@ if (isset($_SESSION['user'])) {
             </li>
             <?php if ($isUserLoggedIn): ?>
                 <li>
-                    <a href=/src/controllers/profil.php>PROFIL</a>
+                    <a href=/profile>PROFIL</a>
                 </li>
 
             <?php else: ?>

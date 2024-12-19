@@ -19,7 +19,7 @@ $routes = [
     'register' => 'src/views/register.php',
     'login' => 'src/views/login.php',
     'logout' => 'src/controllers/logout.php',
-
+    'profile' => 'src/views/profile.php',
     'addNewGame' => 'src/views/addNewGame.php',
     '' => 'src/views/home.php',
 ];
