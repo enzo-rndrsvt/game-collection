@@ -20,6 +20,7 @@ $routes = [
     'login' => 'src/views/login.php',
     'logout' => 'src/controllers/logout.php',
     'profile' => 'src/views/profile.php',
+    'addGame' => 'src/views/addGame.php',
     'addNewGame' => 'src/views/addNewGame.php',
     '' => 'src/views/home.php',
 ];

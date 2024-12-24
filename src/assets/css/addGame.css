@@ -1,0 +1,43 @@
+body {
+    margin-top: 130px;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+
+input{
+    background-color: #2B2F40;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+button {
+    margin-top: 20px;
+    background-color: #6757D6;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #7c5df0;
+}

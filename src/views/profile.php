@@ -22,11 +22,11 @@
 
     <?php
     if (isset($_SESSION['error'])) {
-        echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
+        echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
         unset($_SESSION['error']);
     }
     if (isset($_SESSION['validation'])) {
-        echo '<p style="color:green;">' . $_SESSION['validation'] . '</p>';
+        echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
         unset($_SESSION['validation']);
     }
     ?>
@@ -45,9 +45,11 @@
         <input type="password" name="verif_password" required />
 
         <button type="submit">MODIFIER</button>
-        <button type="sumbit">SUPPRIMER MON COMPTE</button>
-        <button type="submit">SE DECONNECTER</button>
     </form>
+    <div>
+        <a href=""><button>SUPPRIMER MON COMPTE</button></a>
+        <a href="/logout"><button>SE DECONNECTER</button></a>
+    </div>
 </body>
 
 </html>

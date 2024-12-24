@@ -6,10 +6,10 @@ function create_game(
     string $name,
     string $description,
     string $release_date, // Au format 'YYYY-MM-DD'
-    bool $pc,
-    bool $ps,
-    bool $xbox,
-    bool $switch,
+    int $pc,
+    int $ps,
+    int $xbox,
+    int $switch,
     string $image,
     string $site
 ): int {
@@ -52,6 +52,16 @@ function get_games(): array
 
     $query = $db->query('SELECT * FROM games');
     return $query->fetchAll();
+}
+
+function get_game_name(string $name): int
+{
+    $db = create_bdd();
+    $query = $db->prepare("SELECT COUNT(*) FROM games WHERE name = :name");
+    $query->execute([
+        'name' => $name
+    ]);
+    return $query->fetchColumn();
 }
 
 function update_game(

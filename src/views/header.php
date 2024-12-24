@@ -17,7 +17,7 @@ if (isset($_SESSION['user'])) {
                 <a href="./events.php">MA BIBLIOTHEQUE</a>
             </li>
             <li>
-                <a href="/addNewGame">AJOUTER UN JEU</a>
+                <a href="/addGame">AJOUTER UN JEU</a>
             </li>
             <li>
                 <a href="/src/controllers/ranking.php">CLASSEMENT</a>
@@ -29,7 +29,7 @@ if (isset($_SESSION['user'])) {
 
             <?php else: ?>
                 <li>
-                    <a href="/register">CONNEXION</a>
+                    <a href="/login">CONNEXION</a>
                 </li>
             <?php endif; ?>
         </ul>

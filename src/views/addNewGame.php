@@ -24,11 +24,11 @@
 
     <?php
     if (isset($_SESSION['error'])) {
-        echo '<p style="color:red;">' . $_SESSION['error'] . '</p>';
+        echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
         unset($_SESSION['error']);
     }
     if (isset($_SESSION['validation'])) {
-        echo '<p style="color:green;">' . $_SESSION['validation'] . '</p>';
+        echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
         unset($_SESSION['validation']);
     }
     ?>
