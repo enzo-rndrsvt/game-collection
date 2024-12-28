@@ -18,11 +18,27 @@
 </header>
 
 <body>
-    <div>
+    <div class="research">
         <h1>Ajouter un jeu à sa bibliothèque</h1>
         <input type="text" name="search" placeholder="Rechercher un jeu">
         <button>RECHERCHER</button>
+        <h1>Resultats de la recherche</h1>
     </div>
+    <?php require '../models/game.php'; ?>
+    <?php foreach(get_games() as $game): ?>
+        <div class="games">
+        <div class="game-card">
+            <div class="game-image">
+                <img src="<?php $game['image'] ?>" alt="Arriere plan">
+            </div>
+            <div class="game-content">
+                <h2><?php echo $game['name']?></h2>
+                <p><?php echo $game['editor']?></p>
+                <button>AJOUTER A LA BIBLIOTHEQUE</button>
+            </div>    
+        </div>
+    </div>
+    <?php endforeach; ?>
 </body>
 
 </html>

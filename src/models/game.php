@@ -4,6 +4,7 @@ require "sql.php";
 
 function create_game(
     string $name,
+    string $editor,
     string $description,
     string $release_date, // Au format 'YYYY-MM-DD'
     int $pc,
@@ -16,11 +17,12 @@ function create_game(
 
     $db = create_bdd();
 
-    $query = $db->prepare('INSERT INTO games (name, description, release_date, pc, ps, xbox, switch, image, site)
-                                  VALUES (:name, :description, :release_date, :pc, :ps, :xbox, :switch, :image, :site)');
+    $query = $db->prepare('INSERT INTO games (name, editor, description, release_date, pc, ps, xbox, switch, image, site)
+                                  VALUES (:name, :editor, :description, :release_date, :pc, :ps, :xbox, :switch, :image, :site)');
 
     $query->execute([
         'name' => $name,
+        'editor' => $editor,
         'description' => $description,
         'release_date' => $release_date,
         'pc' => $pc,

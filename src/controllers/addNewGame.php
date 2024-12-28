@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         create_game(
             $nom,
+            $editeur,
             $description,
             $date,
             $platforms['pc'],
