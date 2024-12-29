@@ -17,7 +17,10 @@ if (isset($_SESSION['user'])) {
                 <a href="./events.php">MA BIBLIOTHEQUE</a>
             </li>
             <li>
-                <a href="/addNewGame">AJOUTER UN JEU</a>
+                <a href="/addGame">AJOUTER UN JEU</a>
+            </li>
+            <li>
+                <a href="/addNewGame">add nv jeu</a>
             </li>
             <li>
                 <a href="/src/controllers/ranking.php">CLASSEMENT</a>
