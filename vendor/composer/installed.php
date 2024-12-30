@@ -3,7 +3,7 @@
         'name' => 'utilisateur/htdocs',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '14088e2b98d0a9fe16befec2b12f17d49f18f80a',
+        'reference' => '8ae9e9b0d786fc1fa401204b60f6da7744d2044b',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -58,7 +58,7 @@
         'utilisateur/htdocs' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '14088e2b98d0a9fe16befec2b12f17d49f18f80a',
+            'reference' => '8ae9e9b0d786fc1fa401204b60f6da7744d2044b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
