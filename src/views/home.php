@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: /login');
+    exit();
+}
+
+require_once __DIR__ . '../../models/library.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +27,27 @@
 </header>
 
 <body>
-    <h1>Ceci est l'accueil de game collection</h1>
+    <div class="image-container">
+        <img src="/src/assets/images/fond.png" alt="Image d'arriere plan">
+        <div class="text-1"><p>SALUT <?php echo get_user_by_id($_SESSION['user_id']) ?> !</p></div>
+        <div class="text-2"><p>PRÊT À AJOUTER DES</p></div>
+        <div class="text-3"><p>JEUX À TA COLLECTION ?</p></div>
+    </div>
+    <h2>Mes jeux</h2>
+    <div class="games">
+        <?php foreach(get_user_library_details($_SESSION['user_id']) as $game): ?>
+            <div class="game-card">
+                <div class="game-image">
+                    <img src="<?php echo $game['image'] ?>" alt="Arriere plan">
+                </div>
+                <div class="game-content">
+                    <h2><?php echo $game['name']?></h2>
+                    <p><?php echo $game['editor']?></p>
+                    
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </body>
 
 </html>

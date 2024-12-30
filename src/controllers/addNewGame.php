@@ -11,6 +11,11 @@
 //site
 session_start();
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: /login');
+    exit();
+}
+
 require '../models/game.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

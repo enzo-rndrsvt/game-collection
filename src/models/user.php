@@ -37,6 +37,8 @@ function get_user(string $email): array
     return $var;
 }
 
+
+
 function get_email(string $email): int
 {
     $db = create_bdd();

@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <?php
 session_start();
-if (isset($_SESSION['user'])) {
+if (isset($_SESSION['user_id'])) {
     $isUserLoggedIn = true;
 } else {
     $isUserLoggedIn = false;

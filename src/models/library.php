@@ -1,21 +1,22 @@
 <?php
 
+require "sql.php";
 
 function create_library(
     int $userid,
     int $gameid,
-    string $timeplayed // Au format 'YYYY-MM-DD HH:MM:SS'
+    //string $timeplayed // Au format 'YYYY-MM-DD HH:MM:SS'
 ): int {
 
     $db = create_bdd();
 
-    $query = $db->prepare('INSERT INTO library (user_id, game_id, time_played)
-                                  VALUES (:userid, :gameid, :timeplayed)');
+    $query = $db->prepare('INSERT INTO library (user_id, game_id)
+                                  VALUES (:userid, :gameid)');
 
     $query->execute([
         'userid' => $userid,
-        'gameid' => $gameid,
-        'timeplayed' => $timeplayed
+        'gameid' => $gameid
+        //'timeplayed' => $timeplayed
     ]);
 
     return $db->lastInsertId();
@@ -38,6 +39,20 @@ function get_user_library(int $userid): array
     $db = create_bdd();
 
     $query = $db->prepare('SELECT * FROM library WHERE user_id = :userid');
+    $query->execute([
+        'userid' => $userid
+    ]);
+
+    return $query->fetchAll();
+}
+
+
+function get_user_library_details(int $userid): array
+{
+    $db = create_bdd();
+
+    $request = 'SELECT games.id, games.name, games.editor, games.description, games.release_date, games.pc, games.ps, games.xbox, games.switch, games.image, games.site, library.time_played FROM users JOIN library ON users.id = library.user_id JOIN games ON library.game_id = games.id WHERE users.id = :userid';
+    $query = $db->prepare($request);
     $query->execute([
         'userid' => $userid
     ]);
@@ -73,3 +88,15 @@ function delete_library(int $id): void
     ]);
 }
 
+function get_user_by_id(int $id)
+{
+    $db = create_bdd();
+
+    $query = $db->prepare('SELECT first_name FROM users WHERE id = :id');
+    $query->execute([
+        'id' => $id
+    ]);
+
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    return $result['first_name'];
+}

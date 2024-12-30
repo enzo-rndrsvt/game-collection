@@ -11,7 +11,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $user = get_user($email);
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user['id'];
+        $_SESSION['user_id'] = $user['id'];
         header('Location: /');
         exit();
     } else {

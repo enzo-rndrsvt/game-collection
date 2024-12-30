@@ -24,10 +24,7 @@
         <button>RECHERCHER</button>
         <h1>Resultats de la recherche</h1>
     </div>
-    <?php 
-    require __DIR__ . '../../models/game.php';
-    //require '../models/game.php';  
-    ?>
+    <?php require __DIR__ . '../../models/game.php'; ?>
     
     <div class="games">
         <?php foreach(get_games() as $game): ?>
@@ -38,8 +35,11 @@
                 <div class="game-content">
                     <h2><?php echo $game['name']?></h2>
                     <p><?php echo $game['editor']?></p>
-                    <button>AJOUTER A LA BIBLIOTHEQUE</button>
-                </div>    
+                    <form action="/src/controllers/addGame.php" method="POST">
+                        <input type="hidden" name="game_id" value="<?php echo $game['id'] ?>">
+                        <button type="submit">AJOUTER A LA BIBLIOTHEQUE</button>
+                    </form>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
