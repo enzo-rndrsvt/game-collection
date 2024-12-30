@@ -1,3 +1,7 @@
+<?php
+$basePath = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = str_replace('\\', '/', $basePath);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <link rel="stylesheet" href="/src/assets/css/general.css">
-    <link rel="stylesheet" href="/src/assets/css/login.css">
+    <link rel="stylesheet" href="src/assets/css/general.css">
+    <link rel="stylesheet" href="src/assets/css/login.css">
 
 </head>
 
@@ -24,7 +28,7 @@
             unset($_SESSION['validation']);
         }
         ?>
-        <form method="post" action="/src/controllers/login.php">
+        <form method="post" action="<?php echo $basePath; ?>/src/controllers/login.php">
             <div class="form">
                 <div>
                     <p>Email :</p>
@@ -38,7 +42,7 @@
                     <button type="submit">SE CONNECTER</button>
                 </div>
             </div>
-            <a href="/register">S'inscrire</a>
+            <a href="<?php echo $basePath; ?>/register">S'inscrire</a>
         </form>
     </div>
 </body>

@@ -1,3 +1,8 @@
+<?php
+$basePath = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = str_replace('\\', '/', $basePath);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +12,10 @@
 
     <title>Profile</title>
 
-    <link rel="stylesheet" href="/src/assets/css/general.css">
-    <link rel="stylesheet" href="/src/assets/css/header.css">
-    <link rel="stylesheet" href="/src/assets/css/footer.css">
-    <link rel="stylesheet" href="/src/assets/css/profile.css">
+    <link rel="stylesheet" href="src/assets/css/general.css">
+    <link rel="stylesheet" href="src/assets/css/header.css">
+    <link rel="stylesheet" href="src/assets/css/footer.css">
+    <link rel="stylesheet" href="src/assets/css/profile.css">
 
 </head>
 <header>
@@ -31,7 +36,7 @@
     }
     ?>
 
-    <form action="/src/controllers/addNewGame.php" method="POST">
+    <form action="" method="POST">
         <p>Nom :</p>
         <input type="text" id="nom" name="nom" placeholder="Nom">
 
@@ -48,7 +53,7 @@
     </form>
     <div>
         <a href=""><button>SUPPRIMER MON COMPTE</button></a>
-        <a href="/logout"><button>SE DECONNECTER</button></a>
+        <a href="<?php echo $basePath; ?>/logout"><button>SE DECONNECTER</button></a>
     </div>
 </body>
 

@@ -9,22 +9,22 @@ $dotenv->load();
 // comments
 
 
-
+$basePath = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = str_replace('\\', '/', $basePath);
 $request = $_SERVER['REQUEST_URI'];
-$basePath = "/";
 
 $route = str_replace($basePath, '', parse_url($request, PHP_URL_PATH));
 $route = trim($route, '/');
 
 $routes = [
-    '404' => 'src/views/404.php',
-    'register' => 'src/views/register.php',
-    'login' => 'src/views/login.php',
-    'logout' => 'src/controllers/logout.php',
+    '404' => __DIR__ . '/src/views/404.php',
+    'register' => __DIR__ . '/src/views/register.php',
+    'login' => __DIR__ . '/src/views/login.php',
+    'logout' => __DIR__ . '/src/controllers/logout.php',
     'profile' => 'src/views/profile.php',
-    'addGame' => 'src/views/addGame.php',
-    'addNewGame' => 'src/views/addNewGame.php',
-    '' => 'src/views/home.php',
+    'addGame' => __DIR__ . '/src/views/addGame.php',
+    'addNewGame' => __DIR__ . '/src/views/addNewGame.php',
+    '' => __DIR__ . '/src/views/home.php',
 ];
 
 if (array_key_exists($route, $routes)) {
@@ -32,6 +32,6 @@ if (array_key_exists($route, $routes)) {
 } else {
     // Page 404 si la route n'existe pas
     http_response_code(404);
-    header('Location: /404');
+    header('Location:' . $basePath . '/404');
     exit();
 }

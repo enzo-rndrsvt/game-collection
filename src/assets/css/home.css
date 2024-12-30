@@ -73,6 +73,13 @@ button:hover {
   gap: 10px 13px;
 }
 
+.games p {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
 .game-card {
   position: relative;
   width: calc(33.33% - 10px);

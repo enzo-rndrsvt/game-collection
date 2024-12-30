@@ -1,3 +1,7 @@
+<?php
+$basePath = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = str_replace('\\', '/', $basePath);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +11,10 @@
 
     <title>Ajout</title>
 
-    <link rel="stylesheet" href="/src/assets/css/general.css">
-    <link rel="stylesheet" href="/src/assets/css/header.css">
-    <link rel="stylesheet" href="/src/assets/css/footer.css">
-    <link rel="stylesheet" href="/src/assets/css/addGame.css">
+    <link rel="stylesheet" href="src/assets/css/general.css">
+    <link rel="stylesheet" href="src/assets/css/header.css">
+    <link rel="stylesheet" href="src/assets/css/footer.css">
+    <link rel="stylesheet" href="src/assets/css/addGame.css">
 
 </head>
 <header>
@@ -35,7 +39,7 @@
                 <div class="game-content">
                     <h2><?php echo $game['name']?></h2>
                     <p><?php echo $game['editor']?></p>
-                    <form action="/src/controllers/addGame.php" method="POST">
+                    <form action="<?php echo $basePath; ?>/src/controllers/addGame.php" method="POST">
                         <input type="hidden" name="game_id" value="<?php echo $game['id'] ?>">
                         <button type="submit">AJOUTER A LA BIBLIOTHEQUE</button>
                     </form>

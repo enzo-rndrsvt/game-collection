@@ -1,10 +1,15 @@
+<?php
+$basePath = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = str_replace('\\', '/', $basePath);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/assets/css/404.css">
+    <link rel="stylesheet" href="src/assets/css/404.css">
     <title>Document</title>
 
 </head>
@@ -13,7 +18,7 @@
     <div class="container">
         <h1>404</h1>
         <p>Oups ! La page que vous recherchez n'existe pas.</p>
-        <a href="/">Accueil</a>
+        <a href="<?php echo $basePath; ?>/">Accueil</a>
     </div>
 </body>
 

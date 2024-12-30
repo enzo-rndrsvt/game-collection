@@ -1,3 +1,7 @@
+<?php
+$basePath = dirname($_SERVER['SCRIPT_NAME']);
+$basePath = str_replace('\\', '/', $basePath);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +11,10 @@
 
     <title>Ajout</title>
 
-    <link rel="stylesheet" href="/src/assets/css/general.css">
-    <link rel="stylesheet" href="/src/assets/css/header.css">
-    <link rel="stylesheet" href="/src/assets/css/footer.css">
-    <link rel="stylesheet" href="/src/assets/css/addNewGame.css">
+    <link rel="stylesheet" href="src/assets/css/general.css">
+    <link rel="stylesheet" href="src/assets/css/header.css">
+    <link rel="stylesheet" href="src/assets/css/footer.css">
+    <link rel="stylesheet" href="src/assets/css/addNewGame.css">
 
 </head>
 <header>
@@ -33,7 +37,7 @@
     }
     ?>
 
-    <form action="/src/controllers/addNewGame.php" method="POST">
+    <form action="<?php echo $basePath; ?>/src/controllers/addNewGame.php" method="POST">
         <p>Nom du jeu</p>
         <input type="text" id="nom" name="nom" placeholder="Nom du jeu">
 
