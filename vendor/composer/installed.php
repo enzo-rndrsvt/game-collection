@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'utilisateur/htdocs',
+        'name' => 'utilisateur/game-collection',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e0b5c697386a0c99738baea2ac67f7ba0a2764d6',
+        'reference' => 'd10825c189b3908ed5168c3fc8256c90d54d3be4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -55,10 +55,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'utilisateur/htdocs' => array(
+        'utilisateur/game-collection' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e0b5c697386a0c99738baea2ac67f7ba0a2764d6',
+            'reference' => 'd10825c189b3908ed5168c3fc8256c90d54d3be4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
