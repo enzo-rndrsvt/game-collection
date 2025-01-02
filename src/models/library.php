@@ -5,7 +5,6 @@ require "sql.php";
 function create_library(
     int $userid,
     int $gameid,
-    int $timeplayed
 ): int {
 
     $db = create_bdd();

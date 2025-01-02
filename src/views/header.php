@@ -14,7 +14,7 @@ $isUserLoggedIn = isset($_SESSION['user_id']);
     </a>
     <nav>
         <ul>
-            <li><a href="<?php echo $basePath; ?>/library">MA BIBLIOTHEQUE</a></li>
+            <li><a href="<?php echo $basePath; ?>/">MA BIBLIOTHEQUE</a></li>
             <li><a href="<?php echo $basePath; ?>/addGame">AJOUTER UN JEU</a></li>
             <li><a href="<?php echo $basePath; ?>/addNewGame">add nv jeu</a></li>
             <li><a href="<?php echo $basePath; ?>/ranking">CLASSEMENT</a></li>
