@@ -45,3 +45,16 @@ INSERT INTO games (name, editor, description, release_date, pc, ps, xbox, switch
 ('Overwatch 2', 'Blizzard Entertainment', 'Un jeu de tir multijoueur avec des héros uniques.', '2022-10-04', 1, 1, 1, 0, 'https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/bltdabc3782553659f1/650cc84db1e5551677dcd71d/ow2_xboxshowcase_static_7.png?format=webply&quality=90', 'https://playoverwatch.com'),
 ('Dark Souls III', 'FromSoftware', 'Un RPG d\'action difficile dans un univers sombre et impitoyable.', '2016-03-24', 1, 1, 1, 0, 'https://static.bandainamcoent.eu/high/dark-souls/dark-souls-3/00-page-setup/ds3_game-thumbnail.jpg', 'https://darksouls3.com'),
 ('Pokémon Scarlet and Violet', 'Nintendo', 'Une nouvelle aventure Pokémon en monde ouvert.', '2022-11-18', 0, 0, 0, 1, 'https://scarletviolet.pokemon.com/_images/home/header.jpg', 'https://pokemon.com');
+
+
+INSERT INTO library (user_id, game_id, time_played) VALUES
+(21, 1, '10'),
+(21, 2, '15'),
+(21, 3, '20'),
+(21, 4, '25'),
+(21, 5, '30'),
+(21, 6, '122'),
+(21, 7, '18'),
+(21, 8, '22'),
+(21, 9, '140'),
+(21, 10, '138');

@@ -51,7 +51,7 @@ require_once __DIR__ . '../../models/library.php';
                         <img src="<?php echo $game['image'] ?>" alt="Arriere plan">
                     </div>
                     <div class="game-content">
-                        <h2><?php echo $game['name']?></h2>
+                        <h2><?php echo $game['name']?> <span class="game-hours"><?php echo $game['time_played']?>h</span></h2>
                         <p><?php echo $game['editor']?></p>
                     </div>
                 </div>

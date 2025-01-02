@@ -5,13 +5,13 @@ require "sql.php";
 function create_library(
     int $userid,
     int $gameid,
-    //string $timeplayed // Au format 'YYYY-MM-DD HH:MM:SS'
+    int $timeplayed
 ): int {
 
     $db = create_bdd();
 
-    $query = $db->prepare('INSERT INTO library (user_id, game_id)
-                                  VALUES (:userid, :gameid)');
+    $query = $db->prepare('INSERT INTO library (user_id, game_id, time_played)
+                                  VALUES (:userid, :gameid, 0)');
 
     $query->execute([
         'userid' => $userid,
@@ -77,7 +77,7 @@ function update_library(
     int $id,
     int $userid,
     int $gameid,
-    string $timeplayed // Au format 'YYYY-MM-DD HH:MM:SS'
+    int $timeplayed
 ): void {
     $db = create_bdd();
 

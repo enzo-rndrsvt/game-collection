@@ -138,3 +138,12 @@ button:hover {
   font-weight: 500;
   margin-left: 20px;
 }
+
+.game-hours {
+  position: absolute;
+  bottom: 75px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+}
