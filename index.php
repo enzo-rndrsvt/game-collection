@@ -26,6 +26,7 @@ $routes = [
     'deleteProfile' => __DIR__ . '/src/controllers/deleteProfile.php',
     'addGame' => __DIR__ . '/src/views/addGame.php',
     'addNewGame' => __DIR__ . '/src/views/addNewGame.php',
+    'ranking' => __DIR__ . '/src/views/ranking.php',
 
     '' => __DIR__ . '/src/views/home.php',
 ];
