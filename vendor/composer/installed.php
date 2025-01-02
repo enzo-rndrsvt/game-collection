@@ -3,7 +3,7 @@
         'name' => 'utilisateur/game-collection',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd10825c189b3908ed5168c3fc8256c90d54d3be4',
+        'reference' => '1326110b63267501529593620a34f72ca0c21e4e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -58,7 +58,7 @@
         'utilisateur/game-collection' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd10825c189b3908ed5168c3fc8256c90d54d3be4',
+            'reference' => '1326110b63267501529593620a34f72ca0c21e4e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
