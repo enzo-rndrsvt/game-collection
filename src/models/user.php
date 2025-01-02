@@ -25,7 +25,19 @@ function create_user(
 }
 
 
-function get_user(string $email): array
+function get_user(int $id): array
+{
+    $db = create_bdd();
+
+    $query = $db->prepare('SELECT * FROM users WHERE id = :id');
+    $query->execute([
+        'id' => $id
+    ]);
+    $var = $query->fetch(PDO::FETCH_ASSOC);
+    return $var;
+}
+
+function get_user_by_email(string $email): array|false
 {
     $db = create_bdd();
 
@@ -34,9 +46,8 @@ function get_user(string $email): array
         'email' => $email
     ]);
     $var = $query->fetch(PDO::FETCH_ASSOC);
-    return $var;
+    return $var ?: false; // Renvoie false si aucun utilisateur n'est trouvé
 }
-
 
 
 function get_email(string $email): int
@@ -74,8 +85,15 @@ function delete_user(int $id): void
 {
     $db = create_bdd();
 
+    $query = $db->prepare('DELETE FROM library WHERE user_id = :id');
+    $query->execute([
+        'id' => $id
+    ]);
+
     $query = $db->prepare('DELETE FROM users WHERE id = :id');
     $query->execute([
         'id' => $id
     ]);
 }
+
+

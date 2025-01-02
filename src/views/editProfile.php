@@ -42,15 +42,25 @@ $user = get_user($_SESSION['user_id']);
     }
     ?>
 
-    <div class="content">
-        <div class="info">
-            <p>Nom : <?php echo $user['last_name']; ?></p>
-            <p>Prénom : <?php echo $user['first_name']; ?></p>
-            <p>Email : <?php echo $user['email']; ?></p>
-    </div>
-    
+    <form action="<?php echo $basePath; ?>/src/controllers/editProfile.php" method="POST">
+        <p>Nom :</p>
+        <input type="text" id="nom" name="nom" value="<?php echo $user['last_name']; ?>">
+
+        <p>Prénom :</p>
+        <input type="text" id="prenom" name="prenom" value="<?php echo $user['first_name']; ?>">
+
+        <p>Email :</p>
+        <input type="email" id="email" name="email" value="<?php echo $user['email']; ?>">
+
+        <p>Mot de passe :</p>
+        <input type="password" name="password" id="password">
+
+        <p>Confirmation du mot de passe :</p>
+        <input type="password" name="verif_password" id="verif_password"/>
+
+        <button type="submit">MODIFIER</button>
+    </form>
     <div class="buttons">
-        <a href="<?php echo $basePath; ?>/editProfile"><button>MODIFIER MON PROFIL</button></a>
         <form method="POST" action="<?php echo $basePath; ?>/src/controllers/deleteProfile.php">
             <button type="submit">SUPPRIMER MON COMPTE</button>
         </form>

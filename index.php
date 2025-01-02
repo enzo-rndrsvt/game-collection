@@ -22,8 +22,11 @@ $routes = [
     'login' => __DIR__ . '/src/views/login.php',
     'logout' => __DIR__ . '/src/controllers/logout.php',
     'profile' => 'src/views/profile.php',
+    'editProfile' => __DIR__ . '/src/views/editProfile.php',
+    'deleteProfile' => __DIR__ . '/src/controllers/deleteProfile.php',
     'addGame' => __DIR__ . '/src/views/addGame.php',
     'addNewGame' => __DIR__ . '/src/views/addNewGame.php',
+
     '' => __DIR__ . '/src/views/home.php',
 ];
 

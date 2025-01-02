@@ -1,6 +1,8 @@
 <?php
 $basePath = dirname($_SERVER['SCRIPT_NAME']);
 $basePath = str_replace('\\', '/', $basePath);
+
+require __DIR__ . '../../models/game.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +30,7 @@ $basePath = str_replace('\\', '/', $basePath);
         <button>RECHERCHER</button>
         <h1>Resultats de la recherche</h1>
     </div>
-    <?php require __DIR__ . '../../models/game.php'; ?>
+    
     <?php
     if (isset($_SESSION['error'])) {
         echo '<p id="error_message">' . $_SESSION['error'] . '</p>';

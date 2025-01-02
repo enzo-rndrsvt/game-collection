@@ -12,7 +12,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = htmlspecialchars($_POST['email']);
     $password = $_POST['password'];
 
-    $user = get_user($email);
+    $user = get_user_by_email($email);
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
