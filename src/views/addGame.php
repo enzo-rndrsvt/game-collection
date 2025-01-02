@@ -29,6 +29,16 @@ $basePath = str_replace('\\', '/', $basePath);
         <h1>Resultats de la recherche</h1>
     </div>
     <?php require __DIR__ . '../../models/game.php'; ?>
+    <?php
+    if (isset($_SESSION['error'])) {
+        echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['validation'])) {
+        echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
+        unset($_SESSION['validation']);
+    }
+    ?>
     
     <div class="games">
         <?php foreach(get_games() as $game): ?>

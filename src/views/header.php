@@ -9,7 +9,7 @@ $basePath = str_replace('\\', '/', $basePath);
 $isUserLoggedIn = isset($_SESSION['user_id']);
 ?>
 <header>
-    <a id="accueil" href="">
+    <a id="accueil" href="<?php echo $basePath; ?>/">
         <img src="src/assets/images/logo.png" alt="Logo de de game collection">
     </a>
     <nav>

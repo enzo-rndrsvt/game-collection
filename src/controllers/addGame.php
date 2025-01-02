@@ -14,6 +14,12 @@ if (!isset($_SESSION['user_id'])) {
 if (isset($_POST['game_id'])) {
     $user_id = $_SESSION['user_id'];
     $game_id = $_POST['game_id'];
+    if(get_libraries($user_id, $game_id) > 0) {
+        $_SESSION['error'] = "Le jeu est déjà dans votre bibliothèque.";
+        header('Location:' . $basePath . '/addGame');
+        exit();
+    }
+
     create_library($user_id, $game_id);
     header('Location:' . $basePath . '/addGame');
     exit();

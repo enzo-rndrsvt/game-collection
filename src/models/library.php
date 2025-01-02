@@ -34,6 +34,19 @@ function get_library(int $id): array
     return $query->fetch();
 }
 
+function get_libraries(int $userId, int $gameId): int
+{
+    $db = create_bdd();
+
+    $query = $db->prepare('SELECT COUNT(*) FROM library WHERE user_id = :userId AND game_id = :gameId');
+    $query->execute([
+        'userId' => $userId,
+        'gameId' => $gameId
+    ]);
+
+    return $query->fetchColumn();
+}
+
 function get_user_library(int $userid): array
 {
     $db = create_bdd();
