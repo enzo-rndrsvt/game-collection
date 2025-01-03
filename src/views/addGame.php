@@ -61,5 +61,7 @@ require __DIR__ . '../../models/game.php';
     </div>
     
 </body>
-
+<footer>
+    <?php require_once "footer.php" ?>
+</footer>
 </html>

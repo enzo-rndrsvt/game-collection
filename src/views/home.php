@@ -59,5 +59,8 @@ require_once __DIR__ . '../../models/library.php';
         <?php endif; ?>
     </div>
 </body>
+<footer>
+    <?php require_once "footer.php" ?>
+</footer>
 
 </html>

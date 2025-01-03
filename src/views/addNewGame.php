@@ -67,5 +67,7 @@ $basePath = str_replace('\\', '/', $basePath);
         <button type="submit">AJOUTER LE JEU</button>
     </form>
 </body>
-
+<footer>
+    <?php require_once "footer.php" ?>
+</footer>
 </html>

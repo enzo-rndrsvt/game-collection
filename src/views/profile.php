@@ -57,5 +57,7 @@ $user = get_user($_SESSION['user_id']);
         <a href="<?php echo $basePath; ?>/logout"><button>SE DECONNECTER</button></a>
     </div>
 </body>
-
+<footer>
+    <?php require_once "footer.php" ?>
+</footer>
 </html>
