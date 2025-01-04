@@ -11,7 +11,7 @@ require __DIR__ . '../../models/game.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ajout</title>
+    <title>Ajout d'un jeu</title>
 
     <link rel="stylesheet" href="src/assets/css/general.css">
     <link rel="stylesheet" href="src/assets/css/header.css">
