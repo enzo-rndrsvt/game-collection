@@ -72,6 +72,18 @@ function get_user_library_details(int $userid): array
     return $query->fetchAll();
 }
 
+function get_user_library_game_details(int $userid, int $gameid): array
+{
+    $db = create_bdd();
+    $request = 'SELECT games.id, games.name, games.editor, games.description, games.release_date, games.pc, games.ps, games.xbox, games.switch, games.image, games.site, library.time_played FROM library INNER JOIN games ON library.game_id = games.id WHERE library.user_id = :userid AND library.game_id = :gameid;';
+    $query = $db->prepare($request);
+    $query->execute([
+        'userid' => $userid,
+        'gameid' => $gameid
+    ]);
+    return $query->fetchAll();
+}
+
 function update_library(
     int $id,
     int $userid,
