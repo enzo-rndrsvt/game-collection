@@ -20,7 +20,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
 
     if ($_POST['password'] == $_POST['verif_password']) {
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        create_user($nom, $prenom, $email, $password);
+        create_user($prenom, $last, $email, $password);
     } else {
         $_SESSION['error'] = "Les mots de passe ne correspondent pas.";
         header('Location: register');
