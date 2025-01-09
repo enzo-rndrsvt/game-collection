@@ -2,6 +2,11 @@
   "name": "td21-5/game-collection",
   "description": "Game-Collection",
   "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Utilisateur\\GameCollection\\": "src/"
+    }
+  },
   "authors": [
     {
       "name": "Enzo Rynders-Vitu",
