@@ -3,7 +3,7 @@
         'name' => 'td21-5/game-collection',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1c80d8287a422ff20a3b1d5e565cf4593cb71ad7',
+        'reference' => '513647e27720eb104fec06fd018e85477ead0596',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -58,7 +58,7 @@
         'td21-5/game-collection' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1c80d8287a422ff20a3b1d5e565cf4593cb71ad7',
+            'reference' => '513647e27720eb104fec06fd018e85477ead0596',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
