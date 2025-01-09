@@ -72,6 +72,9 @@ button:hover {
   flex-direction: column;
 }
 
+.info {
+  margin-top :30px;
+}
 .content p {
   margin-top: 20px;
   margin-bottom: 20px;

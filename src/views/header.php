@@ -13,7 +13,6 @@ $isUserLoggedIn = isset($_SESSION['user_id']);
         <ul>
             <li><a href="/">MA BIBLIOTHEQUE</a></li>
             <li><a href="addGame">AJOUTER UN JEU</a></li>
-            <li><a href="addNewGame">add nv jeu</a></li>
             <li><a href="ranking">CLASSEMENT</a></li>
             <li><a href="profile">PROFIL</a></li>
         </ul>

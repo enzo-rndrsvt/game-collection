@@ -27,32 +27,33 @@ $user = get_user($_SESSION['user_id']);
 </header>
 
 <body>
-    <h1>Mon profil</h1>
-
-    <?php
-    if (isset($_SESSION['error'])) {
-        echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
-        unset($_SESSION['error']);
-    }
-    if (isset($_SESSION['validation'])) {
-        echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
-        unset($_SESSION['validation']);
-    }
-    ?>
-
     <div class="content">
+        <h1>Mon profil</h1>
+
+        <?php
+        if (isset($_SESSION['error'])) {
+            echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
+            unset($_SESSION['error']);
+        }
+        if (isset($_SESSION['validation'])) {
+            echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
+            unset($_SESSION['validation']);
+        }
+        ?>
+
         <div class="info">
             <p>Nom : <?php echo $user['last_name']; ?></p>
             <p>Prénom : <?php echo $user['first_name']; ?></p>
             <p>Email : <?php echo $user['email']; ?></p>
-    </div>
-    
-    <div class="buttons">
-        <a href="editProfile"><button>MODIFIER MON PROFIL</button></a>
-        <form method="POST" action="deleteProfile">
-            <button type="submit">SUPPRIMER MON COMPTE</button>
-        </form>
-        <a href="logout"><button>SE DECONNECTER</button></a>
+        </div>
+
+        <div class="buttons">
+            <a href="editProfile"><button>MODIFIER MON PROFIL</button></a>
+            <form method="POST" action="deleteProfile">
+                <button type="submit">SUPPRIMER MON COMPTE</button>
+            </form>
+            <a href="logout"><button>SE DECONNECTER</button></a>
+        </div>
     </div>
 </body>
 <footer>
