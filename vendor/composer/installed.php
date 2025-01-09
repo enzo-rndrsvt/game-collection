@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'utilisateur/game-collection',
+        'name' => 'td21-5/game-collection',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1326110b63267501529593620a34f72ca0c21e4e',
+        'reference' => '1c80d8287a422ff20a3b1d5e565cf4593cb71ad7',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -55,10 +55,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'utilisateur/game-collection' => array(
+        'td21-5/game-collection' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1326110b63267501529593620a34f72ca0c21e4e',
+            'reference' => '1c80d8287a422ff20a3b1d5e565cf4593cb71ad7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
