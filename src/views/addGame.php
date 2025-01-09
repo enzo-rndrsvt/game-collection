@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . '/../tools/getBasePath.php';
 
-require __DIR__ . '../../models/game.php';
 $basePath = getBasePath();
+
+require __DIR__ . '/../models/game.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

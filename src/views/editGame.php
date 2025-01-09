@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . '/../tools/getBasePath.php';
 
-require __DIR__ . '../../models/library.php';
 $basePath = getBasePath();
+
+require __DIR__ . '/../models/library.php';
 
 ?>
 
