@@ -1,17 +1,19 @@
 {
-    "name": "barna/game-collection",
-    "autoload": {
-        "psr-4": {
-            "Barna\\GameCollection\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "v0ltis",
-            "email": "barnabe.havard@gmail.com"
-        }
-    ],
-    "require": {
-        "vlucas/phpdotenv": "^5.6"
+  "name": "barna/game-collection",
+  "description": "Game-Collection",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Barna\\GameCollection\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "v0ltis",
+      "email": "barnabe.havard@gmail.com"
+    }
+  ],
+  "require": {
+    "vlucas/phpdotenv": "^5.6"
+  }
 }
