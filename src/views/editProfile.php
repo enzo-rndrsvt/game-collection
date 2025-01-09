@@ -26,6 +26,8 @@ $user = get_user($_SESSION['user_id']);
 </header>
 
 <body>
+
+<div class="content">
     <h1>Mon profil</h1>
 
     <?php
@@ -63,6 +65,7 @@ $user = get_user($_SESSION['user_id']);
         </form>
         <a href="logout"><button>SE DECONNECTER</button></a>
     </div>
+</div>
 </body>
 <footer>
     <?php require_once "footer.php" ?>
