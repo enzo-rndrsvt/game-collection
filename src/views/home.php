@@ -44,6 +44,7 @@ require_once __DIR__ . '/../models/library.php';
         <?php else: ?>
             <?php foreach($userLibrary as $game): ?>
                 <div class="game-card">
+                    <a href="https://google.com"> <!--à modif avec la requête qui envoie l'id du jeu en POST-->
                     <div class="game-image">
                         <img src="<?php echo $game['image'] ?>" alt="Arriere plan">
                     </div>
@@ -51,6 +52,7 @@ require_once __DIR__ . '/../models/library.php';
                         <h2><?php echo $game['name']?> <span class="game-hours"><?php echo $game['time_played']?>h</span></h2>
                         <p><?php echo $game['editor']?></p>
                     </div>
+            </a>
                 </div>
             <?php endforeach; ?>
         <?php endif; ?>
