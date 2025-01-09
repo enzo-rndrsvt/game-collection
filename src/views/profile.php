@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/../tools/getBasePath.php';
 require __DIR__ . '/../models/user.php';
-
-$basePath = getBasePath();
-
 
 
 $user = get_user($_SESSION['user_id']);
@@ -52,11 +48,11 @@ $user = get_user($_SESSION['user_id']);
     </div>
     
     <div class="buttons">
-        <a href="<?php echo $basePath; ?>/editProfile"><button>MODIFIER MON PROFIL</button></a>
-        <form method="POST" action="<?php echo $basePath; ?>/src/controllers/deleteProfile.php">
+        <a href="editProfile"><button>MODIFIER MON PROFIL</button></a>
+        <form method="POST" action="deleteProfile">
             <button type="submit">SUPPRIMER MON COMPTE</button>
         </form>
-        <a href="<?php echo $basePath; ?>/logout"><button>SE DECONNECTER</button></a>
+        <a href="logout"><button>SE DECONNECTER</button></a>
     </div>
 </body>
 <footer>

@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-
 require __DIR__ . '/../models/user.php';
 
 $user = get_user($_SESSION['user_id']);
@@ -43,7 +39,7 @@ $user = get_user($_SESSION['user_id']);
     }
     ?>
 
-    <form action="<?php echo $basePath; ?>/src/controllers/editProfile.php" method="POST">
+    <form action="updateProfile" method="POST">
         <p>Nom :</p>
         <input type="text" id="nom" name="nom" value="<?php echo $user['last_name']; ?>">
 
@@ -62,10 +58,10 @@ $user = get_user($_SESSION['user_id']);
         <button type="submit">MODIFIER</button>
     </form>
     <div class="buttons">
-        <form method="POST" action="<?php echo $basePath; ?>/src/controllers/deleteProfile.php">
+        <form method="POST" action="deleteProfile">
             <button type="submit">SUPPRIMER MON COMPTE</button>
         </form>
-        <a href="<?php echo $basePath; ?>/logout"><button>SE DECONNECTER</button></a>
+        <a href="logout"><button>SE DECONNECTER</button></a>
     </div>
 </body>
 <footer>

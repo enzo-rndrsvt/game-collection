@@ -11,11 +11,8 @@
 //site
 session_start();
 
-$basePath = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
-$basePath = str_replace('\\', '/', $basePath);
-
 if (!isset($_SESSION['user_id'])) {
-    header('Location:' . $basePath . '/login');
+    header('Location: login');
     exit();
 }
 
@@ -39,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (get_game_name($nom) > 0) {
             $_SESSION['error'] = "Le jeu existe déjà.";
-            header('Location:' . $basePath . '/addNewGame');
+            header('Location: addNewGame');
             exit();
         }
 
@@ -57,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
 
         $_SESSION['validation'] = "Jeu ajouté avec succès !";
-        header('Location:' . $basePath . '/addNewGame');
+        header('Location: addNewGame');
         exit();
     }
 }

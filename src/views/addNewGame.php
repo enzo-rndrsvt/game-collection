@@ -1,8 +1,3 @@
-<?php
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +33,7 @@ $basePath = getBasePath();
     }
     ?>
 
-    <form action="<?php echo $basePath; ?>/src/controllers/addNewGame.php" method="POST">
+    <form action="createGame" method="POST">
         <p>Nom du jeu</p>
         <input type="text" id="nom" name="nom" placeholder="Nom du jeu">
 

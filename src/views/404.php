@@ -1,7 +1,4 @@
 <?php
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +16,7 @@ $basePath = getBasePath();
     <div class="container">
         <h1>404</h1>
         <p>Oups ! La page que vous recherchez n'existe pas.</p>
-        <a href="<?php echo $basePath; ?>/">Accueil</a>
+        <a href="/">Accueil</a>
     </div>
 </body>
 

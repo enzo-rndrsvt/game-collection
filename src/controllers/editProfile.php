@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$basePath = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
-$basePath = str_replace('\\', '/', $basePath);
-
-require '../models/user.php';
+require __DIR__ . '/../models/user.php';
 
 $user_id = $_SESSION['user_id'];
 $user = get_user($user_id);
@@ -16,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($email !== $user['email'] && get_email($email) > 0) {
         $_SESSION['error'] = "Cet email est déjà utilisé par un autre compte.";
-        header('Location:' . $basePath . '/editProfile');
+        header('Location: editProfile');
         exit();
     }
 
@@ -27,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             } else {
                 $_SESSION['error'] = "Les mots de passe ne correspondent pas.";
-                header('Location:' . $basePath . '/editProfile');
+                header('Location: editProfile');
                 exit();
             }
         } else {
             $_SESSION['error'] = "Veuillez remplir les deux champs de mot de passe.";
-            header('Location:' . $basePath . '/editProfile');
+            header('Location: editProfile');
             exit();
         }
     } else {
@@ -42,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     update_user($user_id, $fname, $lname, $email, $password);
 
     $_SESSION['validation'] = "Profil mis à jour avec succès.";
-    header('Location:' . $basePath . '/profile');
+    header('Location: profile');
     exit();
 }
 

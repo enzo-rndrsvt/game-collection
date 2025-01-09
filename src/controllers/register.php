@@ -2,11 +2,9 @@
 
 session_start();
 
-$basePath = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
-$basePath = str_replace('\\', '/', $basePath);
 
 
-require '../models/user.php';
+require __DIR__ . '/../models/user.php';
 
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['verif_password'])) {
     $nom = htmlspecialchars($_POST['nom']);
@@ -16,7 +14,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
 
     if (get_email($email) > 0) {
         $_SESSION['error'] = "L'adresse mail est déjà utilisée.";
-        header('Location:' . $basePath . '/register');
+        header('Location: register');
         exit();
     }
 
@@ -25,12 +23,12 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) &&
         create_user($nom, $prenom, $email, $password);
     } else {
         $_SESSION['error'] = "Les mots de passe ne correspondent pas.";
-        header('Location:' . $basePath . '/register');
+        header('Location: register');
         exit();
     }
 
     $_SESSION['validation'] = "Veuillez maintenant vous connecter.";
-    header('Location:' . $basePath . '/login');
+    header('Location: login');
     exit();
 }
 ?>

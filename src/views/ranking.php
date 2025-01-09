@@ -1,9 +1,5 @@
 <?php
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-
-require __DIR__ . '../../models/library.php';
+require __DIR__ . '/../models/library.php';
 
 ?>
 

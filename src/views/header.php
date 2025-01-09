@@ -1,25 +1,21 @@
 <!-- HEADER -->
 <?php
 session_start();
-
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-
-
 $isUserLoggedIn = isset($_SESSION['user_id']);
 ?>
+
+
 <header>
-    <a id="accueil" href="<?php echo $basePath; ?>/">
+    <a id="accueil" href="/">
         <img src="src/assets/images/logo.png" alt="Logo de de game collection">
     </a>
     <nav>
         <ul>
-            <li><a href="<?php echo $basePath; ?>/">MA BIBLIOTHEQUE</a></li>
-            <li><a href="<?php echo $basePath; ?>/addGame">AJOUTER UN JEU</a></li>
-            <li><a href="<?php echo $basePath; ?>/addNewGame">add nv jeu</a></li>
-            <li><a href="<?php echo $basePath; ?>/ranking">CLASSEMENT</a></li>
-            <li><a href="<?php echo $basePath; ?>/profile">PROFIL</a></li>
+            <li><a href="/">MA BIBLIOTHEQUE</a></li>
+            <li><a href="addGame">AJOUTER UN JEU</a></li>
+            <li><a href="addNewGame">add nv jeu</a></li>
+            <li><a href="ranking">CLASSEMENT</a></li>
+            <li><a href="profile">PROFIL</a></li>
         </ul>
     </nav>
 </header>

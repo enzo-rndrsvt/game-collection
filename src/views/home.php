@@ -1,17 +1,12 @@
 <?php
-
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-
 session_start();
 if (!isset($_SESSION['user_id'])) {
 
-    header('Location:' . $basePath. '/login');
+    header('Location: login');
     exit();
 }
 
-require_once __DIR__ . '../../models/library.php';
+require_once __DIR__ . '/../models/library.php';
 
 ?>
 <!DOCTYPE html>

@@ -1,9 +1,3 @@
-<?php
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +24,7 @@ $basePath = getBasePath();
             unset($_SESSION['validation']);
         }
         ?>
-        <form method="post" action="<?php echo $basePath; ?>/src/controllers/register.php">
+        <form method="post" action="registerUser">
             <div class="form">
                 <div>
                     <p>Nom :</p>
@@ -56,7 +50,7 @@ $basePath = getBasePath();
                     <button type="submit">S'INSCRIRE</button>
                 </div>
             </div>
-            <a href="<?php echo $basePath; ?>/login">Se connecter</a>
+            <a href="login">Se connecter</a>
         </form>
     </div>
 </body>

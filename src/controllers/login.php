@@ -1,12 +1,9 @@
 <?php
-
 session_start();
 
-$basePath = dirname(dirname(dirname($_SERVER['SCRIPT_NAME'])));
-$basePath = str_replace('\\', '/', $basePath);
 
 
-require '../models/user.php';
+require __DIR__ . '/../models/user.php';
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = htmlspecialchars($_POST['email']);
@@ -16,11 +13,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['user_id'] = $user['id'];
-        header('Location: ' . $basePath . '/');
+        header('Location: /');
         exit();
     } else {
         $_SESSION['error'] = "Adresse mail ou mot de passe incorrect.";
-        header('Location:' . $basePath . '/login');
+        header('Location: login');
         exit();
     }
 }

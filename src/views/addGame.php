@@ -1,8 +1,4 @@
 <?php
-require_once __DIR__ . '/../tools/getBasePath.php';
-
-$basePath = getBasePath();
-
 require __DIR__ . '/../models/game.php';
 ?>
 <!DOCTYPE html>
@@ -52,7 +48,7 @@ require __DIR__ . '/../models/game.php';
                 <div class="game-content">
                     <h2><?php echo $game['name']?></h2>
                     <p><?php echo $game['editor']?></p>
-                    <form action="<?php echo $basePath; ?>/src/controllers/addGame.php" method="POST">
+                    <form action="createGame" method="POST">
                         <input type="hidden" name="game_id" value="<?php echo $game['id'] ?>">
                         <button type="submit">AJOUTER A LA BIBLIOTHEQUE</button>
                     </form>
