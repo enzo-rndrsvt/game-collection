@@ -1,7 +1,7 @@
 <?php
+require_once __DIR__ . '/../tools/getBasePath.php';
 
-$basePath = dirname($_SERVER['SCRIPT_NAME']);
-$basePath = str_replace('\\', '/', $basePath);
+$basePath = getBasePath();
 
 require __DIR__ . '../../models/library.php';
 

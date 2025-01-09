@@ -2,8 +2,9 @@
 <?php
 session_start();
 
-$basePath = dirname($_SERVER['SCRIPT_NAME']);
-$basePath = str_replace('\\', '/', $basePath);
+require_once __DIR__ . '/../tools/getBasePath.php';
+
+$basePath = getBasePath();
 
 
 $isUserLoggedIn = isset($_SESSION['user_id']);

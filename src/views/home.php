@@ -1,10 +1,12 @@
 <?php
 
-$basePath = dirname($_SERVER['SCRIPT_NAME']);
-$basePath = str_replace('\\', '/', $basePath);
+require_once __DIR__ . '/../tools/getBasePath.php';
+
+$basePath = getBasePath();
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
+
     header('Location:' . $basePath. '/login');
     exit();
 }

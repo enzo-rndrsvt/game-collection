@@ -1,10 +1,12 @@
 <?php
 session_start();
 
-$basePath = dirname($_SERVER['SCRIPT_NAME']);
-$basePath = str_replace('\\', '/', $basePath);
+require_once __DIR__ . '/../tools/getBasePath.php';
+require __DIR__ . '/../models/user.php';
 
-require __DIR__ . '../../models/user.php';
+$basePath = getBasePath();
+
+
 
 $user = get_user($_SESSION['user_id']);
 ?>
