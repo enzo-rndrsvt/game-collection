@@ -6,8 +6,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// comments
-
 
 $basePath = dirname($_SERVER['SCRIPT_NAME']);
 $basePath = str_replace('\\', '/', $basePath);
