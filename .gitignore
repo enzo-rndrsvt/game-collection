@@ -6,7 +6,6 @@
 .env
 
 .DS_Store
-/vendor/
 
 game_collection_rsa
 game_collection_rsa.pub
