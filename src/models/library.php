@@ -112,7 +112,7 @@ function delete_library(int $id): void
     ]);
 }
 
-function get_user_by_id(int $id)
+function get_user_by_id(int $id): mixed
 {
     $db = create_bdd();
 
@@ -123,4 +123,12 @@ function get_user_by_id(int $id)
 
     $result = $query->fetch(PDO::FETCH_ASSOC);
     return $result['first_name'];
+}
+
+function get_10_first_player(): array
+{
+    $db = create_bdd();
+    $query = $db->prepare('SELECT u.id AS user_id, u.first_name AS first_name, u.last_name AS last_name, g.name AS game_name, MAX(l.time_played) AS max_time_played FROM library l JOIN users u ON l.user_id = u.id JOIN games g ON l.game_id = g.id GROUP BY u.id, u.first_name, u.last_name, g.name ORDER BY max_time_played DESC LIMIT 10;');
+    $query->execute();
+    return $query->fetchAll();
 }
