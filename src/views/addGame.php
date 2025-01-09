@@ -23,8 +23,10 @@ require __DIR__ . '/../models/game.php';
 <body>
     <div class="research">
         <h1>Ajouter un jeu à sa bibliothèque</h1>
-        <input type="text" name="search" placeholder="Rechercher un jeu">
-        <button>RECHERCHER</button>
+        <form action="addGame" method="POST">
+            <input type="text" name="search" placeholder="Rechercher un jeu" value="<?php echo $_POST['search'] ?? '' ?>">
+            <button>RECHERCHER</button>
+        </form>
         <h1>Resultats de la recherche</h1>
     </div>
     
@@ -40,7 +42,15 @@ require __DIR__ . '/../models/game.php';
     ?>
     
     <div class="games">
-        <?php foreach(get_games() as $game): ?>
+        <?php
+        $games = get_games_like($_POST['search'] ?? '');
+        if (empty($games)) { ?>
+                <div class="center-container">
+                    <h2>Aucun jeu trouvé</h2>
+                    <button onclick="location.href='addNewGame'">Ajouter un jeu</button>
+                </div>
+        <?php } else {
+        foreach(($games) as $game): ?>
             <div class="game-card">
                 <div class="game-image">
                     <img src="<?php echo $game['image'] ?>" alt="Arriere plan">
@@ -48,13 +58,13 @@ require __DIR__ . '/../models/game.php';
                 <div class="game-content">
                     <h2><?php echo $game['name']?></h2>
                     <p><?php echo $game['editor']?></p>
-                    <form action="createGame" method="POST">
+                    <form action="addGameLib" method="POST">
                         <input type="hidden" name="game_id" value="<?php echo $game['id'] ?>">
                         <button type="submit">AJOUTER A LA BIBLIOTHEQUE</button>
                     </form>
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php endforeach; } ?>
     </div>
     
 </body>

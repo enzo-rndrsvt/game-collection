@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-require '../models/game.php';
+require __DIR__ . '/../models/game.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['nom']) && isset($_POST['editeur']) && isset($_POST['date']) && isset($_POST['description']) && isset($_POST['cover']) && isset($_POST['site'])) {

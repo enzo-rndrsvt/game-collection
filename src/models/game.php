@@ -56,6 +56,18 @@ function get_games(): array
     return $query->fetchAll();
 }
 
+function get_games_like(string $name): array
+{
+    $db = create_bdd();
+
+    $query = $db->prepare('SELECT * FROM games WHERE name LIKE :name');
+    $query->execute([
+        'name' => '%' . $name . '%'
+    ]);
+
+    return $query->fetchAll();
+}
+
 function get_game_name(string $name): int
 {
     $db = create_bdd();
