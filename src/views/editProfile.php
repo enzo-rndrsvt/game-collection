@@ -63,7 +63,7 @@ $user = get_user($_SESSION['user_id']);
         <form method="POST" action="deleteProfile">
             <button type="submit">SUPPRIMER MON COMPTE</button>
         </form>
-        <a href="logout"><button>SE DECONNECTER</button></a>
+        <button><a href="logout">SE DECONNECTER</a></button>
     </div>
 </div>
 </body>

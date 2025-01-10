@@ -48,11 +48,11 @@ $user = get_user($_SESSION['user_id']);
         </div>
 
         <div class="buttons">
-            <a href="editProfile"><button>MODIFIER MON PROFIL</button></a>
+            <button><a href="editProfile">MODIFIER MON PROFIL</a></button>
             <form method="POST" action="deleteProfile">
                 <button type="submit">SUPPRIMER MON COMPTE</button>
             </form>
-            <a href="logout"><button>SE DECONNECTER</button></a>
+            <button><a href="logout">SE DECONNECTER</a></button>
         </div>
     </div>
 </body>

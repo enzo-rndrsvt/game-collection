@@ -41,7 +41,7 @@ require __DIR__ . '/../models/library.php';
             </form>
         </div>
     </div>
-    <img class="cover" src="<?php echo $game['image'] ?>" alt="Couverture du jeu">
+    <img class="cover" src="src/assets/images/co1q1f.png" alt="Couverture du jeu"> <!--à modif avec la requête qui récupère l'image du jeu avec l'id passé en POST + supprimer l'image du jeu dans le dossier image-->
 </div>
 </body>
 <footer>
