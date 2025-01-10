@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="src/assets/css/general.css">
+    <link rel="stylesheet" href="src/assets/css/footer.css">
     <link rel="stylesheet" href="src/assets/css/login.css">
 
 </head>
@@ -42,5 +43,8 @@
         </form>
     </div>
 </body>
+<footer>
+    <?php require_once "footer.php" ?>
+</footer>
 
 </html>
