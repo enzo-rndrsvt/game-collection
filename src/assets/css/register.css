@@ -16,6 +16,7 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 60px 40px 40px 40px;
+    flex-grow: 0;
 }
 
 .register h1 {
