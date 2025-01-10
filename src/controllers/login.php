@@ -5,7 +5,7 @@ session_start();
 
 require __DIR__ . '/../models/user.php';
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $email = htmlspecialchars($_POST['email']);
     $password = $_POST['password'];
 
