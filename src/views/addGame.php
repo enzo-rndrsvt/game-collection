@@ -26,11 +26,11 @@ require __DIR__ . '/../models/game.php';
         
         <?php
             if (isset($_SESSION['error'])) {
-                echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
+                echo '<p class="message">' . $_SESSION['error'] . '</p>';
                 unset($_SESSION['error']);
             }
             if (isset($_SESSION['validation'])) {
-                echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
+                echo '<p class="message">' . $_SESSION['validation'] . '</p>';
                 unset($_SESSION['validation']);
             }
             ?>
@@ -46,8 +46,8 @@ require __DIR__ . '/../models/game.php';
         $games = get_games_like($_POST['search'] ?? '');
         if (empty($games)) { ?>
                 <div class="center-container">
-                    <h2>Aucun jeu trouvé</h2>
-                    <button onclick="location.href='addNewGame'">Ajouter un jeu</button>
+                <h2>Aucun jeu ne correspond à votre recherche</h2>
+                    <button onclick="location.href='addNewGame'">CREER UN JEU</button>
                 </div>
         <?php } else {
         foreach(($games) as $game): ?>

@@ -17,11 +17,11 @@
         <?php
         session_start();
         if (isset($_SESSION['error'])) {
-            echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
+            echo '<p class="message">' . $_SESSION['error'] . '</p>';
             unset($_SESSION['error']);
         }
         if (isset($_SESSION['validation'])) {
-            echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
+            echo '<p class="message">' . $_SESSION['validation'] . '</p>';
             unset($_SESSION['validation']);
         }
         ?>

@@ -20,3 +20,16 @@ body {
 body > *:not(header):not(footer) {
     flex: 1;
 }
+
+
+/*Message d'erreur ou de succès*/
+.message {
+    background-color: #9386da;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #5e4bd6;
+    box-sizing: border-box;
+}

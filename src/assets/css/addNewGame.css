@@ -1,18 +1,10 @@
 body {
-    margin-top: 130px;
     margin-left: 120px;
     margin-right: 120px;
 }
-.container {
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #2B2F40;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
 
 h1 {
+    margin-top: 130px;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -25,9 +17,14 @@ p {
     margin-top: 10px;
 }
 
+p:first-of-type:not(:first-child) {
+    margin-top: 30px;
+}
+
 form {
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
 }
 
 label {
@@ -46,6 +43,10 @@ textarea {
     outline: none;
 }
 
+input:not([type="checkbox"]){
+    width: 300px;
+}
+
 input::placeholder,
 textarea::placeholder {
     color: #888;
@@ -53,7 +54,6 @@ textarea::placeholder {
 
 textarea {
     resize: none;
-    height: 100px;
 }
 
 button {
@@ -67,6 +67,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.3s ease;
+    align-self: flex-start;
 }
 
 button:hover {
@@ -76,6 +77,10 @@ button:hover {
 /* Plateformes */
 .platformes {
     margin-top: 10px;
+}
+
+.platformes p {
+    margin-top: 0px;
 }
 
 .platformes span {

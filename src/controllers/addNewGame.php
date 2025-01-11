@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
 
         if (!array_sum($platforms)) {
-            $_SESSION['error'] = "Echec : pour créer un jeu vous devez lui attribuer au moins une plateforme.";
+            $_SESSION['error'] = "⚠ Ce jeu n'a pas pu être créé, vous devez lui attribuer au moins une plateforme.";
             header('Location: addNewGame');
             exit();
         }
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $site = htmlspecialchars($_POST['site']);
 
         if (get_game_name($nom) > 0) {
-            $_SESSION['error'] = "Le jeu existe déjà.";
+            $_SESSION['error'] = "⚠ Ce jeu existe déjà, il n'a pa pu être créé.";
             header('Location: addNewGame');
             exit();
         }
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         create_library($_SESSION['user_id'], $game_id);
 
-        $_SESSION['validation'] = "Jeu créé et ajouté à votre bibliothèque avec succès !";
+        $_SESSION['validation'] = "✔ Jeu créé et ajouté à votre bibliothèque avec succès !";
         header('Location: addGame');
         exit();
     }
