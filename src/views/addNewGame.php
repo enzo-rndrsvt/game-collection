@@ -27,6 +27,7 @@ ini_set('display_errors', 1);
 <div>
     <h1>Ajouter un jeu à sa bibliothèque</h1>
 
+    <!--Affichage des messages d'erreur ou de succès-->
     <?php
     if (isset($_SESSION['error'])) {
         echo '<p class="message">' . $_SESSION['error'] . '</p>';
@@ -40,6 +41,8 @@ ini_set('display_errors', 1);
 
     <p>Le jeu que vous souhaiter ajouter n'existe pas ! Vous pouvez le créer, celui-ci sera automatiquement ajouter a
         votre bibliothèque !</p>
+
+    <!--Formulaire de création d'un jeu-->
     <form action="createGame" method="POST">
         <p>Nom du jeu</p>
         <input type="text" id="nom" name="nom" placeholder="Nom du jeu" required>

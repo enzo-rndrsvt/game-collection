@@ -24,6 +24,7 @@ require __DIR__ . '/../models/game.php';
     <div class="research">
         <h1>Ajouter un jeu à sa bibliothèque</h1>
         
+        <!--Affichage des messages d'erreur ou de succès-->
         <?php
             if (isset($_SESSION['error'])) {
                 echo '<p class="message">' . $_SESSION['error'] . '</p>';
@@ -33,9 +34,11 @@ require __DIR__ . '/../models/game.php';
                 echo '<p class="message">' . $_SESSION['validation'] . '</p>';
                 unset($_SESSION['validation']);
             }
-            ?>
+        ?>
+
+        <!--Formulaire de recherche-->
         <form action="addGame" method="POST">
-            <input type="text" name="search" placeholder="Rechercher un jeu" value="<?php echo $_POST['search'] ?? '' ?>">
+            <input type="text" name="search" placeholder="Rechercher un jeu" value="<?php echo $_POST['search'] ?? '' ?>"> <!--La valeur de la recherche est vide par défaut-->
             <button>RECHERCHER</button>
         </form>
         <h1>Resultats de la recherche</h1>
@@ -43,13 +46,14 @@ require __DIR__ . '/../models/game.php';
     
     <div class="games">
         <?php
-        $games = get_games_like($_POST['search'] ?? '');
+        $games = get_games_like($_POST['search'] ?? ''); //On récupère le résultat de la recherche pour afficher les jeux
         if (empty($games)) { ?>
                 <div class="center-container">
                 <h2>Aucun jeu ne correspond à votre recherche</h2>
                     <button onclick="location.href='addNewGame'">CREER UN JEU</button>
                 </div>
         <?php } else {
+        // On affiche les jeux
         foreach(($games) as $game): ?>
             <div class="game-card">
                 <div class="game-image">

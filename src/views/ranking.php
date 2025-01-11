@@ -19,19 +19,21 @@ require __DIR__ . '/../models/library.php';
     <?php require_once "header.php" ?>
 </header>
 <body>
+<div class="ranking">
     <h1>Classement des temps passés</h1>
-    <div class="ranking">
+    <!--Tableau des scores-->
         <table border="0">
             <tr>
                 <th>Joueur</th>
                 <th>Temps passés</th>
                 <th>Jeu favori</th>
             </tr>
-        <?php foreach(get_10_first_player() as $users): ?>
+            <!--Affichage des 20 meilleurs joueurs du classement en terme de total d'heures de jeu-->
+        <?php foreach(get_20_first_player() as $users): ?>
             <tr>
                 <td><?php echo $users['first_name'] . ' ' . $users['last_name'] ?></td>
-                <td><?php echo $users['max_time_played'] . ' h' ?></td>
-                <td><?php echo $users['game_name'] ?></td>
+                <td><?php echo $users['total_time_played'] . ' h' ?></td>
+                <td><?php echo $users['favorite_game'] ?></td>
             </tr>
         <?php endforeach; ?>
         </table>

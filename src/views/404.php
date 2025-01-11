@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!--En cas de page introuvable on redirige vers l'acceuil-->
     <div class="container">
         <h1>404</h1>
         <p>Oups ! La page que vous recherchez n'existe pas.</p>

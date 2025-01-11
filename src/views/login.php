@@ -14,6 +14,8 @@
 <body>
     <div class="connexion">
         <h1>Se connecter à Game Collection</h1>
+
+        <!--Affichage des messages d'erreur ou de succès-->
         <?php
         session_start();
         if (isset($_SESSION['error'])) {
@@ -25,6 +27,8 @@
             unset($_SESSION['validation']);
         }
         ?>
+
+        <!--Formulaire de connexion-->
         <form method="post" action="loginUser">
             <div class="form">
                 <div>
@@ -39,7 +43,7 @@
                     <button type="submit">SE CONNECTER</button>
                 </div>
             </div>
-            <a href="register">S'inscrire</a>
+            <a href="register">S'inscrire</a> <!--Redirection pour l'inscription-->
         </form>
     </div>
 </body>

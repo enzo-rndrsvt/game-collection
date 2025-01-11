@@ -30,17 +30,19 @@ $user = get_user($_SESSION['user_id']);
 <div class="content">
     <h1>Mon profil</h1>
 
+    <!--Affichage des messages d'erreur ou de succès-->
     <?php
     if (isset($_SESSION['error'])) {
-        echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
+        echo '<p class="message">' . $_SESSION['error'] . '</p>';
         unset($_SESSION['error']);
     }
     if (isset($_SESSION['validation'])) {
-        echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
+        echo '<p class="message">' . $_SESSION['validation'] . '</p>';
         unset($_SESSION['validation']);
     }
     ?>
 
+    <!--Formulaire pour modifier les informations personnelles de l'utilisateur-->
     <form action="updateProfile" method="POST">
         <p>Nom :</p>
         <input type="text" id="nom" name="nom" value="<?php echo $user['last_name']; ?>">
@@ -59,7 +61,9 @@ $user = get_user($_SESSION['user_id']);
 
         <button type="submit">MODIFIER</button>
     </form>
+
     <div class="buttons">
+        <!--Formulaire pour supprimer son compte-->
         <form method="POST" action="deleteProfile">
             <button type="submit">SUPPRIMER MON COMPTE</button>
         </form>

@@ -23,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($_POST['password'] === $_POST['verif_password']) {
                 $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             } else {
-                $_SESSION['error'] = "Les mots de passe ne correspondent pas.";
+                $_SESSION['error'] = "⚠ Les mots de passe ne correspondent pas.";
                 header('Location: editProfile');
                 exit();
             }
         } else {
-            $_SESSION['error'] = "Veuillez remplir les deux champs de mot de passe.";
+            $_SESSION['error'] = "⚠ Veuillez remplir les deux champs de mot de passe.";
             header('Location: editProfile');
             exit();
         }
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     update_user($user_id, $fname, $lname, $email, $password);
 
-    $_SESSION['validation'] = "Profil mis à jour avec succès.";
+    $_SESSION['validation'] = "✔ Profil mis à jour avec succès.";
     header('Location: profile');
     exit();
 }

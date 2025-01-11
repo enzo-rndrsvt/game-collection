@@ -125,10 +125,16 @@ function get_user_by_id(int $id): mixed
     return $result['first_name'];
 }
 
-function get_10_first_player(): array
+function get_20_first_player(): array
 {
     $db = create_bdd();
-    $query = $db->prepare('SELECT u.id AS user_id, u.first_name AS first_name, u.last_name AS last_name, g.name AS game_name, MAX(l.time_played) AS max_time_played FROM library l JOIN users u ON l.user_id = u.id JOIN games g ON l.game_id = g.id GROUP BY u.id, u.first_name, u.last_name, g.name ORDER BY max_time_played DESC LIMIT 20;');
+    $query = $db->prepare('SELECT u.id AS user_id, u.first_name AS first_name, u.last_name AS last_name, total_played.total_time_played, favorite_game.name AS favorite_game, favorite_game.max_time_played AS max_time_on_favorite_game FROM users u
+                        JOIN (SELECT l.user_id, SUM(l.time_played) AS total_time_played FROM library l GROUP BY l.user_id) 
+                            total_played ON u.id = total_played.user_id
+                        LEFT JOIN (SELECT l.user_id, g.name, l.time_played AS max_time_played FROM library l
+                                JOIN games g ON l.game_id = g.id WHERE (l.user_id, l.time_played) IN (SELECT user_id, MAX(time_played) FROM library GROUP BY user_id))
+                            favorite_game ON u.id = favorite_game.user_id 
+                        ORDER BY total_played.total_time_played DESC LIMIT 20;');
     $query->execute();
     return $query->fetchAll();
 }

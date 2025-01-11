@@ -20,22 +20,24 @@ require __DIR__ . '/../models/library.php';
 </header>
 <body>
 <div class="content">
-    <div class="principal">
 
+    <!--On affiche les informations du jeu sélectionné-->
+    <div class="principal">
         <h1>Nom jeu</h1> <!--à modif avec la requête qui récupère le nom du jeu avec l'id passé en POST-->
         <p>Editeur : Ubisoft </p> <!--à modif avec la requête qui récupère l'éditeur du jeu avec l'id passé en POST-->
         <p>Sortie le 10/11/13</p> <!--à modif avec la requête qui récupère le date de sortie du jeu avec l'id passé en POST-->
         <p>Temps passé: 60h</p> <!--à modif avec la requête qui récupère le temps de jeu du joueur avec l'id passé en POST et l'id du joueur-->
 
         <h2>Ajouter du temps passé sur le jeu</h2>
+        <!--Formulaire pour modifier le temps de jeu-->
         <form action="updateProfile" method="POST">
             <p>Temps passé sur le jeu</p>
             <input type="text" id="nbHeuresJeu" name="nbHeuresJeu" value="nb heures actuelles"> <!--à modif avec la requête qui récupère le nom du jeu passé en POST-->
-
             <button type="submit">AJOUTER</button>
         </form>
 
         <div class="buttons">
+            <!--Formulaire pour supprimer le jeu de la bibliothèque de l'utilisateur-->
             <form method="POST" action="deleteGameLibrary">
                 <button type="submit">SUPPRIMER LE JEU DE MA BIBLIOTHEQUE</button>
             </form>

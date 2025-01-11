@@ -14,6 +14,8 @@
 <body>
     <div class="register">
         <h1>Inscription</h1>
+
+        <!--Affichage des messages d'erreur ou de succès-->
         <?php
         session_start();
         if (isset($_SESSION['error'])) {
@@ -25,6 +27,8 @@
             unset($_SESSION['validation']);
         }
         ?>
+
+        <!--Formulaire d'inscription-->
         <form method="post" action="registerUser">
             <div class="form">
                 <div>
@@ -51,7 +55,7 @@
                     <button type="submit">S'INSCRIRE</button>
                 </div>
             </div>
-            <a href="login">Se connecter</a>
+            <a href="login">Se connecter</a> <!--Redirection pour la connextion-->
         </form>
     </div>
 </body>
