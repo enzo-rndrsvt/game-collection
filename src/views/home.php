@@ -29,6 +29,7 @@ require_once __DIR__ . '/../models/library.php';
 </header>
 
 <body>
+    
     <div class="image-container">
         <img src="src/assets/images/fond.png" alt="Image d'arriere plan">
         <div class="text-1"><p>SALUT <?php echo get_user_by_id($_SESSION['user_id']) ?> !</p></div>

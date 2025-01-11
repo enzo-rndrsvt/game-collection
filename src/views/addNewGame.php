@@ -38,35 +38,36 @@ ini_set('display_errors', 1);
     }
     ?>
 
-    <form action="createGame" method="POST">
-        <p>Nom du jeu</p>
-        <input type="text" id="nom" name="nom" placeholder="Nom du jeu">
+<form action="createGame" method="POST">
+    <p>Nom du jeu</p>
+    <input type="text" id="nom" name="nom" placeholder="Nom du jeu" required>
 
-        <p>Editeur du jeu</p>
-        <input type="text" id="editeur" name="editeur" placeholder="Editeur du jeu">
+    <p>Editeur du jeu</p>
+    <input type="text" id="editeur" name="editeur" placeholder="Editeur du jeu" required>
 
-        <p>Sortie du jeu</p>
-        <input type="date" name="date" id="date">
+    <p>Sortie du jeu</p>
+    <input type="date" name="date" id="date" required>
 
-        <div class="platformes">
-            <p>Platformes</p>
-            <p><input type="checkbox" id="playstation" name="playstation"> Playstation</p>
-            <p><input type="checkbox" id="xbox" name="xbox"> Xbox</p>
-            <p><input type="checkbox" id="nintendo" name="nintendo"> Nintendo</p>
-            <p><input type="checkbox" id="pc" name="pc"> PC</p>
-        </div>
+    <div class="platformes">
+        <p>Plateformes</p>
+        <p><input type="checkbox" id="playstation" name="playstation"> Playstation</p>
+        <p><input type="checkbox" id="xbox" name="xbox"> Xbox</p>
+        <p><input type="checkbox" id="nintendo" name="nintendo"> Nintendo</p>
+        <p><input type="checkbox" id="pc" name="pc"> PC</p>
+    </div>
 
-        <p>Description du jeu</p>
-        <textarea id="description" placeholder="Description du jeu" name="description"></textarea>
+    <p>Description du jeu</p>
+    <textarea id="description" name="description" placeholder="Description du jeu" required></textarea>
 
-        <p>URL de la cover</p>
-        <input type="url" id="cover" name="cover" placeholder="URL de la cover">
+    <p>URL de la cover</p>
+    <input type="url" id="cover" name="cover" placeholder="URL de la cover" required>
 
-        <p>URL du site</p>
-        <input type="url" id="site" name="site" placeholder="URL du site">
+    <p>URL du site</p>
+    <input type="url" id="site" name="site" placeholder="URL du site" required>
 
-        <button type="submit">AJOUTER LE JEU</button>
-    </form>
+    <button type="submit">AJOUTER LE JEU</button>
+</form>
+
 </body>
 <footer>
     <?php require_once "footer.php" ?>

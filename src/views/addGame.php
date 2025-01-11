@@ -23,23 +23,23 @@ require __DIR__ . '/../models/game.php';
 <body>
     <div class="research">
         <h1>Ajouter un jeu à sa bibliothèque</h1>
+        
+        <?php
+            if (isset($_SESSION['error'])) {
+                echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
+                unset($_SESSION['error']);
+            }
+            if (isset($_SESSION['validation'])) {
+                echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
+                unset($_SESSION['validation']);
+            }
+            ?>
         <form action="addGame" method="POST">
             <input type="text" name="search" placeholder="Rechercher un jeu" value="<?php echo $_POST['search'] ?? '' ?>">
             <button>RECHERCHER</button>
         </form>
         <h1>Resultats de la recherche</h1>
     </div>
-    
-    <?php
-    if (isset($_SESSION['error'])) {
-        echo '<p id="error_message">' . $_SESSION['error'] . '</p>';
-        unset($_SESSION['error']);
-    }
-    if (isset($_SESSION['validation'])) {
-        echo '<p id="validation_message">' . $_SESSION['validation'] . '</p>';
-        unset($_SESSION['validation']);
-    }
-    ?>
     
     <div class="games">
         <?php

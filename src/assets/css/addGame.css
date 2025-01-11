@@ -17,6 +17,12 @@ h2 {
   font-weight: 700;
 }
 
+p {
+  font-size: 16px;
+  color: white;   
+  margin-top: 10px;
+}
+
 .center-container {
   display: flex;
   flex-direction: column;

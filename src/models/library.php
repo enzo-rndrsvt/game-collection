@@ -1,6 +1,6 @@
 <?php
 
-require "sql.php";
+include_once "sql.php";
 
 function create_library(
     int $userid,
