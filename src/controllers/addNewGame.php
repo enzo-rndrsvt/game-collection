@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
 
         if (!array_sum($platforms)) {
-            $_SESSION['error'] = "Pour créer un jeu vous devez lui attribuer au moins une plateforme.";
+            $_SESSION['error'] = "Echec : pour créer un jeu vous devez lui attribuer au moins une plateforme.";
             header('Location: addNewGame');
             exit();
         }
