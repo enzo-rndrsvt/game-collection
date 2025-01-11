@@ -1,26 +1,33 @@
 <?php
 
+# On récupère la fonction dans sql.php
 include_once "sql.php";
 
+# Fonction pour créer une nouvelle librairie de jeux
 function create_library(
     int $userid,
     int $gameid,
 ): int {
 
+    # On crée la connexion à la base de données
     $db = create_bdd();
 
+    # On prépare la requête
     $query = $db->prepare('INSERT INTO library (user_id, game_id, time_played)
                                   VALUES (:userid, :gameid, 0)');
 
+    # On exécute la requête
     $query->execute([
         'userid' => $userid,
         'gameid' => $gameid
         //'timeplayed' => $timeplayed
     ]);
 
+    # On retourne l'identifiant de la librairie créée
     return $db->lastInsertId();
 }
 
+# Fonction pour récupérer une librairie de jeux à l'aide de son id
 function get_library(int $id): array
 {
     $db = create_bdd();
@@ -33,6 +40,7 @@ function get_library(int $id): array
     return $query->fetch();
 }
 
+# Fonction qui compte le nombre de jeux dans la librairie d'un utilisateur avec un jeu donné
 function get_libraries(int $userId, int $gameId): int
 {
     $db = create_bdd();
@@ -46,6 +54,7 @@ function get_libraries(int $userId, int $gameId): int
     return $query->fetchColumn();
 }
 
+# Fonction pour récupérer tous les jeux de la librairie d'un utilisateur
 function get_user_library(int $userid): array
 {
     $db = create_bdd();
@@ -58,7 +67,7 @@ function get_user_library(int $userid): array
     return $query->fetchAll();
 }
 
-
+# Fonction pour récupérer les détails d'un jeu de la librairie d'un utilisateur
 function get_user_library_details(int $userid): array
 {
     $db = create_bdd();
@@ -72,18 +81,7 @@ function get_user_library_details(int $userid): array
     return $query->fetchAll();
 }
 
-function get_user_library_game_details(int $userid, int $gameid): array
-{
-    $db = create_bdd();
-    $request = 'SELECT games.id, games.name, games.editor, games.description, games.release_date, games.pc, games.ps, games.xbox, games.switch, games.image, games.site, library.time_played FROM library INNER JOIN games ON library.game_id = games.id WHERE library.user_id = :userid AND library.game_id = :gameid;';
-    $query = $db->prepare($request);
-    $query->execute([
-        'userid' => $userid,
-        'gameid' => $gameid
-    ]);
-    return $query->fetchAll();
-}
-
+# Fonction pour mettre à jour une librairie de jeux
 function update_library(
     int $id,
     int $userid,
@@ -101,7 +99,7 @@ function update_library(
     ]);
 }
 
-
+# Fonction pour supprimer une librairie de jeux
 function delete_library(int $id): void
 {
     $db = create_bdd();
@@ -112,6 +110,7 @@ function delete_library(int $id): void
     ]);
 }
 
+# Fonction qui récupère le prénom d'un utilisateur à l'aide de son id
 function get_user_by_id(int $id): mixed
 {
     $db = create_bdd();
@@ -125,6 +124,7 @@ function get_user_by_id(int $id): mixed
     return $result['first_name'];
 }
 
+# Fonction pour récupérer le temps de jeux des 20 premiers joueurs avec leur jeux préférés
 function get_20_first_player(): array
 {
     $db = create_bdd();
