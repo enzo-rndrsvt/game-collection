@@ -81,9 +81,7 @@ button:hover {
 }
 
 .cover {
-  width: 464px;
-  height: 655px;
-  object-fit: contain;
+  height : 355px;
 }
 
 .content {

@@ -47,9 +47,7 @@ $game = get_user_library_game_details($_SESSION['user_id'], $_POST['game_id']);
             </form>
         </div>
     </div>
-    <div>
-        <img class="cover" src="<?php echo $game['image'] ?>" alt="Couverture du jeu">
-    </div>
+    <img class="cover" src="<?php echo $game['image'] ?>" alt="Couverture du jeu">
 </div>
 </body>
 <footer>
