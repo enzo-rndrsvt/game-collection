@@ -36,8 +36,19 @@ require_once __DIR__ . '/../models/library.php';
         <div class="text-2"><p>PRÊT À AJOUTER DES</p></div>
         <div class="text-3"><p>JEUX À TA COLLECTION ?</p></div>
     </div>
-
     <h3 class="titre">Mes jeux</h3>
+
+    <?php
+    if (isset($_SESSION['error'])) {
+        echo '<p class="message">' . $_SESSION['error'] . '</p>';
+        unset($_SESSION['error']);
+    }
+    if (isset($_SESSION['validation'])) {
+        echo '<p class="message">' . $_SESSION['validation'] . '</p>';
+        unset($_SESSION['validation']);
+    }
+    ?>
+    
     <div class="games">
         <?php
         // On récupère les jeux de l'utilisateur
