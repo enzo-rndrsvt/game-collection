@@ -1,12 +1,12 @@
 <?php
+
 # Chargement du .env
 require_once __DIR__ . '/vendor/autoload.php';
-
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-
+# Gérer les routes
 $basePath = dirname($_SERVER['SCRIPT_NAME']);
 $basePath = str_replace('\\', '/', $basePath);
 $request = $_SERVER['REQUEST_URI'];
@@ -14,8 +14,9 @@ $request = $_SERVER['REQUEST_URI'];
 $route = str_replace($basePath, '', parse_url($request, PHP_URL_PATH));
 $route = trim($route, '/');
 
+# Routes
 $routes = [
-    // views
+    // Views
     '404' => __DIR__ . '/src/views/404.php',
     'register' => __DIR__ . '/src/views/register.php',
     'login' => __DIR__ . '/src/views/login.php',
@@ -26,7 +27,6 @@ $routes = [
     'editGame' => __DIR__ . '/src/views/editGame.php',
     'ranking' => __DIR__ . '/src/views/ranking.php',
     '' => __DIR__ . '/src/views/home.php',
-
 
     // Controllers
     'addGameLib' => __DIR__ . '/src/controllers/addGame.php',
