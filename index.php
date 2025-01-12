@@ -32,6 +32,7 @@ $routes = [
     'addGameLib' => __DIR__ . '/src/controllers/addGame.php',
     'createGame' => __DIR__ . '/src/controllers/addNewGame.php',
     'updateGame' => __DIR__ . '/src/controllers/editGame.php',
+    'deleteGame' => __DIR__ . '/src/controllers/deleteGame.php',
     'deleteProfile' => __DIR__ . '/src/controllers/deleteProfile.php',
     'updateProfile' => __DIR__ . '/src/controllers/editProfile.php',
     'loginUser' => __DIR__ . '/src/controllers/login.php',

@@ -10,8 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 # On récupère les fonctions nécessaires
 require __DIR__ . '/../models/library.php';
 
-# On récupère les informations nécessaires
-$user_id = $_SESSION['user_id'];
+
 
 # On vérifie que le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,6 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $time_played = !empty($_POST['nbHeuresJeu']) ? htmlspecialchars($_POST['nbHeuresJeu']) : 0;
     $game_id = $_POST['game_id'];
 
+    # On récupère l'identifiant de l'utilisateur
+    $user_id = intval($_SESSION['user_id']);
+    
     # On vérifie que le temps de jeu est un chiffre
     if (!is_numeric($time_played)) {
         $_SESSION['error'] = "❌ Le temps de jeu doit être un chiffre.";

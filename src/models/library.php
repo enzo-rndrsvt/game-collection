@@ -97,14 +97,15 @@ function update_library(
     ]);
 }
 
-# Fonction pour supprimer une librairie de jeux
-function delete_library(int $id): void
+# Fonction pour supprimer un jeu d'une librairie
+function delete_game(int $userid, int $gameid): void
 {
     $db = create_bdd();
 
-    $query = $db->prepare('DELETE FROM library WHERE id = :id');
+    $query = $db->prepare('DELETE FROM library WHERE user_id = :userid AND game_id = :gameid;');
     $query->execute([
-        'id' => $id
+        'userid' => $userid,
+        'gameid' => $gameid
     ]);
 }
 

@@ -41,7 +41,8 @@ $game = get_user_library_game_details($_SESSION['user_id'], $_POST['game_id']);
 
         <div class="buttons">
             <!--Formulaire pour supprimer le jeu de la bibliothèque de l'utilisateur-->
-            <form method="POST" action="deleteGameLibrary">
+            <form method="POST" action="deleteGame">
+                <input type="hidden" id="game_id" name="game_id" value="<?php echo $game['id'] ?>">
                 <button type="submit">SUPPRIMER LE JEU DE MA BIBLIOTHEQUE</button>
             </form>
         </div>

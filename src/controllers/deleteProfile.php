@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 } else {
     # Sinon on redirige vers la page de profil avec un message d'erreur
-    $_SESSION['error'] = "Problème lors de la suppression du compte.";
+    $_SESSION['error'] = "❌ Problème lors de la suppression du compte.";
     header('Location: profile');
     exit();
 }
