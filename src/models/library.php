@@ -83,19 +83,17 @@ function get_user_library_details(int $userid): array
 
 # Fonction pour mettre à jour une librairie de jeux
 function update_library(
-    int $id,
     int $userid,
     int $gameid,
     int $timeplayed
 ): void {
     $db = create_bdd();
 
-    $query = $db->prepare('UPDATE library SET user_id = :userid, game_id = :gameid, time_played = :timeplayed WHERE id = :id');
+    $query = $db->prepare('UPDATE library SET time_played = time_played + :timeplayed WHERE user_id = :userid AND game_id = :gameid');
     $query->execute([
         'userid' => $userid,
         'gameid' => $gameid,
         'timeplayed' => $timeplayed,
-        'id' => $id
     ]);
 }
 
@@ -108,6 +106,20 @@ function delete_library(int $id): void
     $query->execute([
         'id' => $id
     ]);
+}
+
+# Fonction pour récupérer les détails d'un jeu de la librairie d'un utilisateur
+function get_user_library_game_details(int $userid, int $gameid): array
+{
+    $db = create_bdd();
+    $request = 'SELECT g.id, g.name, g.editor, g.description, g.release_date, g.pc, g.ps, g.xbox, g.switch, g.image, g.site, l.time_played FROM library l INNER JOIN users u ON l.user_id = u.id INNER JOIN games g ON l.game_id = g.id WHERE u.id = :userid AND g.id = :gameid;';
+    $query = $db->prepare($request);
+    $query->execute([
+        'userid' => $userid,
+        'gameid' => $gameid
+    ]);
+    $var = $query->fetch(PDO::FETCH_ASSOC);
+    return $var;
 }
 
 # Fonction qui récupère le prénom d'un utilisateur à l'aide de son id

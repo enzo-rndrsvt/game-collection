@@ -81,12 +81,13 @@ button:hover {
 }
 
 .cover {
-  width: 264px;
-  height : 355px;
+  width: 464px;
+  height: 655px;
+  object-fit: contain;
 }
 
 .content {
-  display : flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 130px;

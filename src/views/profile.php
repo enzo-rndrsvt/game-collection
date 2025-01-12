@@ -2,9 +2,8 @@
 session_start();
 
 require __DIR__ . '/../models/user.php';
-
-
 $user = get_user($_SESSION['user_id']);
+
 ?>
 
 <!DOCTYPE html>

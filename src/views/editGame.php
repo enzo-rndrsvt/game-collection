@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 require __DIR__ . '/../models/library.php';
-
+$game = get_user_library_game_details($_SESSION['user_id'], $_POST['game_id']);
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ require __DIR__ . '/../models/library.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier un jeu</title>
+
     <link rel="stylesheet" href="src/assets/css/general.css">
     <link rel="stylesheet" href="src/assets/css/header.css">
     <link rel="stylesheet" href="src/assets/css/footer.css">
@@ -23,16 +24,18 @@ require __DIR__ . '/../models/library.php';
 
     <!--On affiche les informations du jeu sélectionné-->
     <div class="principal">
-        <h1>Nom jeu</h1> <!--à modif avec la requête qui récupère le nom du jeu avec l'id passé en POST-->
-        <p>Editeur : Ubisoft </p> <!--à modif avec la requête qui récupère l'éditeur du jeu avec l'id passé en POST-->
-        <p>Sortie le 10/11/13</p> <!--à modif avec la requête qui récupère le date de sortie du jeu avec l'id passé en POST-->
-        <p>Temps passé: 60h</p> <!--à modif avec la requête qui récupère le temps de jeu du joueur avec l'id passé en POST et l'id du joueur-->
-
+        <h1><?php echo $game['name'] ?></h1> <!--à modif avec la requête qui récupère le nom du jeu avec l'id passé en POST-->
+        <p>Editeur : <?php echo $game['editor'] ?> </p> <!--à modif avec la requête qui récupère l'éditeur du jeu avec l'id passé en POST-->
+        <p>Sortie le <?php echo $game['release_date'] ?></p> <!--à modif avec la requête qui récupère le date de sortie du jeu avec l'id passé en POST-->
+        <p>Temps passé: <?php echo $game['time_played'] ?>h</p> <!--à modif avec la requête qui récupère le temps de jeu du joueur avec l'id passé en POST et l'id du joueur-->
+    
+    
         <h2>Ajouter du temps passé sur le jeu</h2>
         <!--Formulaire pour modifier le temps de jeu-->
-        <form action="updateProfile" method="POST">
+        <form action="updateGame" method="POST">
             <p>Temps passé sur le jeu</p>
-            <input type="text" id="nbHeuresJeu" name="nbHeuresJeu" value="nb heures actuelles"> <!--à modif avec la requête qui récupère le nom du jeu passé en POST-->
+            <input type="text" id="nbHeuresJeu" name="nbHeuresJeu" value="<?php echo $game['time_played'] ?>">
+            <input type="hidden" id="game_id" name="game_id" value="<?php echo $game['id'] ?>">
             <button type="submit">AJOUTER</button>
         </form>
 
@@ -43,7 +46,9 @@ require __DIR__ . '/../models/library.php';
             </form>
         </div>
     </div>
-    <img class="cover" src="src/assets/images/co1q1f.png" alt="Couverture du jeu"> <!--à modif avec la requête qui récupère l'image du jeu avec l'id passé en POST + supprimer l'image du jeu dans le dossier image-->
+    <div>
+        <img class="cover" src="<?php echo $game['image'] ?>" alt="Couverture du jeu">
+    </div>
 </div>
 </body>
 <footer>

@@ -47,8 +47,10 @@ require_once __DIR__ . '/../models/library.php';
         <?php else: ?>
             <!-- On affiche les jeux de l'utilisateur s'il en a-->
             <?php foreach($userLibrary as $game): ?>
-                <div class="game-card">
-                    <a href="https://google.com"> <!--à modif avec la requête qui envoie l'id du jeu en POST-->
+                <form action="editGame" method="POST" class="game-card">
+                    <input type="hidden" name="game_id" value="<?php echo $game['id'] ?>">
+                    <button type="submit">
+                    <div class="edit-message">Modifier</div>
                     <div class="game-image">
                         <img src="<?php echo $game['image'] ?>" alt="Arriere plan">
                     </div>
@@ -56,8 +58,9 @@ require_once __DIR__ . '/../models/library.php';
                         <h2><?php echo $game['name']?> <span class="game-hours"><?php echo $game['time_played']?>h</span></h2>
                         <p><?php echo $game['editor']?></p>
                     </div>
-            </a>
-                </div>
+                    
+                    </button>
+                </form>
             <?php endforeach; ?>
         <?php endif; ?>
     </div>

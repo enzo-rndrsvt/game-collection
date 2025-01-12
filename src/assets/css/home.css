@@ -147,3 +147,64 @@ button:hover {
   font-weight: 400;
   color: white;
 }
+
+.game-card {
+  position: relative;
+  width: calc(33.33% - 10px);
+  height: 350px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.game-card button {
+  all: unset;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.game-card:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Augmentez l'opacité pour un effet plus visible */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajoutez une ombre pour un effet de profondeur */
+}
+
+.game-card:hover .game-content {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.94) 35%,
+    rgba(0, 0, 0, 0.78) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+.edit-message {
+  display: none;
+  position: absolute;
+  top: 30%; /* Ajustez cette valeur pour positionner le message plus haut */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #5a3ec8; /* Utilisez une couleur de fond similaire */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px; /* Utilisez des coins arrondis similaires */
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 3;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.game-card:hover .edit-message {
+  display: block;
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+}
