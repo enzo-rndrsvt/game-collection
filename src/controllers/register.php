@@ -2,12 +2,6 @@
 
 session_start();
 
-# On vérifie que l'utilisateur est connecté, sinon on le renvoie à la page de connexion
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login');
-    exit();
-}
-
 # On récupère les fonctions nécessaires
 require __DIR__ . '/../models/user.php';
 
